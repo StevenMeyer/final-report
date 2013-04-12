@@ -7,6 +7,14 @@ Inc., AquaFold. 2012 (Nov.).
 \newblock Accessed 2012/11/19.
 
 
+\bibitem[\protect\citename{Raymond, }2002]{CatB}
+Raymond, Eric~S. 2002 (Aug.).
+\newblock {\em The cathedral and the bazaar}.
+\newblock
+  \url{http://www.catb.org/esr/writings/cathedral-bazaar/cathedral-bazaar/}.
+\newblock Accessed 2013/04/12.
+
+
 \bibitem[\protect\citename{Sebesta, }2007]{ProgrammingWWW}
 Sebesta, Robert~W. 2007.
 \newblock {\em Programming the world wide web}. fourth, international edn.

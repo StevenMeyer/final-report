@@ -290,20 +290,21 @@ Wales, UK \\
 \newpage}}
 
 \def\setchapterheaderfooter{ 
-%%%%% Added to redefine the page style %%%%%%%%%%%%%%
+%%%%% Added to redefine the page style for the first page of the chapter %%%%%%%%%%%%%%
 \fancypagestyle{plain}{%
-%\fancyhf{} % clear all header and footer fields
+\fancyhf{} % clear all header and footer fields
 \fancyhead[L]{\textsl{Chapter\ \thechapter}}
 \fancyhead[R]{\textsl{\leftmark}}
 
-\fancyfoot[C]{{\thepage} of \pageref{LastPage}} % except the center
+\fancyfoot[RO,LE]{{\thepage} of \pageref{LastPage}} % except the center
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}}
 
-%%% Setting the header and footer 
+%%% Setting the header and footer for pages other than the first page of the chapter
+\fancyhf{}
 \fancyhead[L]{\textsl{Chapter\ \thechapter}}
 \fancyhead[R]{\textsl{\leftmark}}
-\fancyfoot[C]{{\thepage} of \pageref{LastPage}}
+\fancyfoot[RO,LE]{{\thepage} of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 

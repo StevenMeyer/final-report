@@ -1,8 +1,9 @@
-\chapter{Background \& Objectives} % 631 words
-\section*{Background} % 498 words
+\cleardoublepage
+\chapter{Background \& Objectives} % 914 words
+\section{Background} % 534 words
 Data modelling and database design are vast topic areas accompanied by many volumes of published theory and literature. This project focusses on a fragment of the topic; conceptual design\slash schemata. Specifically, it is concerned with entity relationship (ER) grammar and mainly with ER diagrams.
 
-The ER modelling grammar for conceptual modelling serves two major purposes. Firstly, it can be used as a communication device used by an analyst to interact with an end-user. Secondly, it can be used as a design tool at the highest level of abstraction to communicate a deeper understanding to the database designer [\cite{DataModelingAndDatabaseDesign}]. Id est the database structure and semantics can be described in a manner which is not specific to any implementation.
+The ER modelling grammar for conceptual modelling serves two major purposes. Firstly, it can be used as a communication device used by an analyst to interact with an end-user. Secondly, it can be used as a design tool at the highest level of abstraction to communicate a deeper understanding to the database designer (\cite{DataModelingAndDatabaseDesign}). Id est the database structure and semantics can be described in a manner which is not specific to any implementation.
 
 Where object relational mapping (ORM) is used, such diagrams can also be useful devices for describing the relationships between objects to the application programmers. This is particularly useful where business logic is applied at the application level; developers (who may not have designed the database, themselves) must have a way to understand the logic represented by the database design and to understand those parts of the business logic which must be applied at the application level. This is particularly relevant when using an ORM such as Propel, where the level of database abstraction afforded to the application programmers comes at the price of losing the ability to describe logic at the database level. Database-level logic, in this case, is represented by stored procedures, triggers et cetera.
 
@@ -19,8 +20,10 @@ There are products which will natively support ER diagrams and ORM frameworks, b
 	\item They are not free software. They are either not \emph{gratis} (without cost) or not \emph{libre} (without restrictions) or both.
 \end{itemize}
 
-\section*{Objectives} % 133 words
-The most basic aim of this project is to create a free tool to create ER\slash RM diagrams from Propel schema XML and vice versa. It should provide the expected features of existing modelling tools, but be specifically aimed at Propel schemata. The normalised information-preserving grammar of Propel is more closely related to relational modelling grammar, so RM modelling grammar would be preferable to ER modelling grammar.
+This project, rather than being of commercial importance or even being a common problem in industry, came about by the student's own need. Such a situation, however, is the precursor to every good work of software (\cite{CatB}).
+
+\section{Objectives} % 160 words
+The most basic aim of this project is to build a free tool to create ER\slash RM diagrams from Propel schema XML and vice versa. It should provide the expected features of existing modelling tools, but be specifically aimed at Propel schemata. The normalised information-preserving grammar of Propel is more closely related to relational modelling grammar, so RM modelling grammar would be preferable to ER modelling grammar.
 
 The core goals of the project are:
 \begin{itemize}
@@ -41,5 +44,15 @@ The project had these stretch goals which were available if the core goals were 
 \begin{itemize}
 	\item Further integration with Propel to allow for additional logic such as validators and behaviours.
 	\item Include inheritance. This is part of the Propel schema and introduces aspects of enhanced ER modelling.
+	\item To be portable. These tasks do not require any OS interaction and so should not need installing, neither should any special software be required to use it.
 	\item To be free software, id est libre.
 \end{itemize}
+
+\section{Related Systems}% 220 words
+As previously discussed, there are many existing `database designers' available. One such product which has native support for ORMs, including Propel, is ORM Designer. However, this product is closed-source and costs \euro99 for a single licence.
+
+The initial design for this project was to extend an existing software to include support for Propel schema. Of the various free modelling tools which were investigated, WWWSQLDesigner by Ondrej Zara was selected to be extended. This designer produces its own XML from RM diagrams, and database-specific SQL is generated from this using XSL transforms. The software is written in JavaScript and HTML meaning that it should run on any platform with a web browser making it a portable application and fulfilling one of the goals of this project.
+
+There are flaws in the software, however, which limited its usefulness for modelling Propel schema (or, indeed, any database) such as lack of composite key support and other incompatibilities with transforming the XML. It also used an in-house JavaScript library created by Zara which made modifying the code to add extra features a challenge. It also has no facility to save the diagram as an image.
+
+After these issues were identified, it was decided that the modelling software would be created as part of this project to utilise modern web technology and avoid custom frameworks.

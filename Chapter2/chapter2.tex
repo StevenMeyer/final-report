@@ -1,14 +1,27 @@
 %\addcontentsline{toc}{chapter}{Development Process}
+\cleardoublepage
 \chapter{Development Process}
 
-You need to describe briefly the life cycle model that you used. Do not force your project into the waterfall model if it is better described by prototyping or some other evolutionary model. You do not need to write about all of the different process models that you are aware of. Focus on the process model that you have used. It is possible that you needed to adapt an existing process model to suit your project; clearly identify what you used and how you adapted it for your needs.
+%You need to describe briefly the life cycle model that you used. Do not force your project into the waterfall model if it is better described by prototyping or some other evolutionary model. You do not need to write about all of the different process models that you are aware of. Focus on the process model that you have used. It is possible that you needed to adapt an existing process model to suit your project; clearly identify what you used and how you adapted it for your needs.
 
-In most cases, the agreed objectives or requirements will be the result of a compromise between what would ideally have been produced and what was felt to be possible in the time available. A discussion of the process of arriving at the final list is usually appropriate.
+%In most cases, the agreed objectives or requirements will be the result of a compromise between what would ideally have been produced and what was felt to be possible in the time available. A discussion of the process of arriving at the final list is usually appropriate.
 
-You should briefly describe the design method you used and any support tools that you used. You should discuss your choice of implementation tools - programming language, compilers, database management system, program development environment, etc.
+%You should briefly describe the design method you used and any support tools that you used. You should discuss your choice of implementation tools - programming language, compilers, database management system, program development environment, etc.
 
-\section{Introduction}
-Introduce the specific model that you chose to use. 
+%\section{Introduction}
+%Introduce the specific model that you chose to use. 
 
-\section{Modifications}
-Did you have to modify the model to suit a one-person project. If so, what did you change and why? 
+%\section{Modifications}
+%Did you have to modify the model to suit a one-person project. If so, what did you change and why? 
+\section{Process Methodology}
+A schema diagram consists of a few main parts: the tables; the columns; and relationships. These are hierarchical in nature --- tables have columns, columns have attributes and relationships depend on tables most significantly and then on columns. When viewed in this manner, it can be seen that an evolutionary process model can be used to develop the system.
+
+%It was decided that an agile methodology would be used. An amalgamation of test-driven development and extreme programming was selected. From extreme programming, those facets pertaining to fast development and to developing only that which is required such as YAGNI, red-green-refactor and stories were to be used. %As the Propel schema is reasonably mature and stable and RM diagrams are well defined, a purist approach to XP is not s
+
+It was decided than an agile approach to development would be used. The developer was also the intended customer for this project, although the software would presumably be usable by others, so the developer team would be small and the customer dedicated, collaborative, and empowered. As the system is evolutionary in nature, the requirements can be detailed as and when they are required, rather than being described in their entirety from early in the project.
+
+The development process was mostly based upon elements of extreme programming (XP), adopting those facets pertaining to fast, iterative programming such as ``you ain't gonna need it'' (YAGNI) and test-driven development (TDD). The requirements and tasks were formed using XP's notion of stories.
+
+In using this development model, it should have been the case that after every iteration there would be a functional (if not feature-laden) product. This gave some protection against unforeseen changes or set-backs, assuring that there would be a product at every stage of the life-cycle. It would also deliver value early in the production.
+
+Once the development methodology had been chosen the high-level requirements stories were described. These initial stories were very simplistic in their specification and encapsulated the main aspects of forming a diagram of an entity. Due to the use of XP, failure to implement any of these stories would not affect the releasable state of the program.
