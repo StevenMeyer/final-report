@@ -1,6 +1,6 @@
 \cleardoublepage
-\chapter{Background \& Objectives} % 914 words
-\section{Background} % 534 words
+\chapter{Background \& Objectives} % 973 words
+\section{Background}
 Data modelling and database design are vast topic areas accompanied by many volumes of published theory and literature. This project focusses on a fragment of the topic; conceptual design\slash schemata. Specifically, it is concerned with entity relationship (ER) grammar and mainly with ER diagrams.
 
 The ER modelling grammar for conceptual modelling serves two major purposes. Firstly, it can be used as a communication device used by an analyst to interact with an end-user. Secondly, it can be used as a design tool at the highest level of abstraction to communicate a deeper understanding to the database designer (\cite{DataModelingAndDatabaseDesign}). Id est the database structure and semantics can be described in a manner which is not specific to any implementation.
@@ -22,7 +22,7 @@ There are products which will natively support ER diagrams and ORM frameworks, b
 
 This project, rather than being of commercial importance or even being a common problem in industry, came about by the student's own need. Such a situation, however, is the precursor to every good work of software (\cite{CatB}).
 
-\section{Objectives} % 160 words
+\section{Objectives}
 The most basic aim of this project is to build a free tool to create ER\slash RM diagrams from Propel schema XML and vice versa. It should provide the expected features of existing modelling tools, but be specifically aimed at Propel schemata. The normalised information-preserving grammar of Propel is more closely related to relational modelling grammar, so RM modelling grammar would be preferable to ER modelling grammar.
 
 The core goals of the project are:
@@ -48,7 +48,7 @@ The project had these stretch goals which were available if the core goals were 
 	\item To be free software, id est libre.
 \end{itemize}
 
-\section{Related Systems}% 220 words
+\section{Related Systems}
 As previously discussed, there are many existing `database designers' available. One such product which has native support for ORMs, including Propel, is ORM Designer. However, this product is closed-source and costs \euro99 for a single licence.
 
 The initial design for this project was to extend an existing software to include support for Propel schema. Of the various free modelling tools which were investigated, WWWSQLDesigner by Ondrej Zara was selected to be extended. This designer produces its own XML from RM diagrams, and database-specific SQL is generated from this using XSL transforms. The software is written in JavaScript and HTML meaning that it should run on any platform with a web browser making it a portable application and fulfilling one of the goals of this project.

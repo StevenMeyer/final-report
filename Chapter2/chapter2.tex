@@ -1,6 +1,6 @@
 %\addcontentsline{toc}{chapter}{Development Process}
 \cleardoublepage
-\chapter{Development Process}
+\chapter{Development Process}% 721 words
 
 %You need to describe briefly the life cycle model that you used. Do not force your project into the waterfall model if it is better described by prototyping or some other evolutionary model. You do not need to write about all of the different process models that you are aware of. Focus on the process model that you have used. It is possible that you needed to adapt an existing process model to suit your project; clearly identify what you used and how you adapted it for your needs.
 
@@ -14,9 +14,8 @@
 %\section{Modifications}
 %Did you have to modify the model to suit a one-person project. If so, what did you change and why? 
 \section{Process Methodology}
+\subsection*{Selection}
 A schema diagram consists of a few main parts: the tables; the columns; and relationships. These are hierarchical in nature --- tables have columns, columns have attributes and relationships depend on tables most significantly and then on columns. When viewed in this manner, it can be seen that an evolutionary process model can be used to develop the system.
-
-%It was decided that an agile methodology would be used. An amalgamation of test-driven development and extreme programming was selected. From extreme programming, those facets pertaining to fast development and to developing only that which is required such as YAGNI, red-green-refactor and stories were to be used. %As the Propel schema is reasonably mature and stable and RM diagrams are well defined, a purist approach to XP is not s
 
 It was decided than an agile approach to development would be used. The developer was also the intended customer for this project, although the software would presumably be usable by others, so the developer team would be small and the customer dedicated, collaborative, and empowered. As the system is evolutionary in nature, the requirements can be detailed as and when they are required, rather than being described in their entirety from early in the project.
 
@@ -25,3 +24,18 @@ The development process was mostly based upon elements of extreme programming (X
 In using this development model, it should have been the case that after every iteration there would be a functional (if not feature-laden) product. This gave some protection against unforeseen changes or set-backs, assuring that there would be a product at every stage of the life-cycle. It would also deliver value early in the production.
 
 Once the development methodology had been chosen the high-level requirements stories were described. These initial stories were very simplistic in their specification and encapsulated the main aspects of forming a diagram of an entity. Due to the use of XP, failure to implement any of these stories would not affect the releasable state of the program.
+
+When the original modelling tool was abandoned, these same high-level stories were re-usable in specifying the development of the new modelling tool after having their context altered to fit.
+
+\subsection*{Modification}
+Some XP components had to be modified to cater to the requirements of the project. As the project was being undertaken by a sole developer, the practice of pair programming could not be accomplished in the expected way. As pair programming is an essential device for detecting and correcting errors and code smells, it was adapted to have some impact with a sole developer: the code was inspected at a later date in order to identify issues which had been missed in the first instance.
+
+The YAGNI process was also relaxed slightly in order to accommodate for patterns for which it was clear would be required at a later date, but which would be prohibited by an XP purist as such action would be deemed superfluous in the instance in which it was being created. This decision was intended to reduce the amount (and cost) of refactoring which would be required when the XP process would eventually call for it.
+
+\subsection*{Requirements Specification}
+Stories were committed to story cards to be arranged on a board in the vicinity of the development environment, but for stories which had been broken down into detailed tasks were committed to !PROGRAM! tickets. This program allows for tickets to be assigned, have comments added, and ultimately closed as completed allowing the work-flow to be documented and visualised.
+
+\section{Tools}
+The first implementation of the software was written in XSLT and JavaScript --- the same programming languages as the intended design tool, \mbox{WWWSQLDesigner}. The final implementation which included a designer used JavaScript, scalar vector graphics (SVG), and HTML5. These programming languages were selected because of their ubiquitous support on all major platforms; all of these are available in most major web browsers. It was decided that the Java\-Script would be compiled from Coffee\-Script. This is mainly due to Coffee\-Script's standardised way of dealing with classes in Java\-Script and because the compiled Java\-Script is purportedly more readable than and executes as fast as or faster than equivalent JS written without Coffee\-Script and which is also pretty-printed and passes through JSLint without generating warnings (or errors).
+
+All development was performed using the Netbeans IDE from Oracle Corp. The release candidate version 7.3 was selected for its enhanced HTML5 development environment and the Coffee\-Script plugin was used for developing and compiling Coffee\-Script. Using this IDE allowed the project to be debugged in the IDE, negating the need for additional web-browser inspection tools.

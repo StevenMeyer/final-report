@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.4.9)  12 APR 2013 19:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.4.9)  12 APR 2013 21:48
 entering extended mode
 **final*report.tex
 ("C:\Users\steven\Documents\university\year 4\major project\final-report\final report.tex"
@@ -344,44 +344,44 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 
 ]
 Chapter 2.
-) [5
-
-] ("C:\Users\steven\Documents\university\year 4\major project\final-report\Chapter3/chapter3.tex"
-Chapter 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
-) [6
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+[5
+
+]) [6] ("C:\Users\steven\Documents\university\year 4\major project\final-report\Chapter3/chapter3.tex"
+Chapter 3.
+) [7
 
 
 
 ] ("C:\Users\steven\Documents\university\year 4\major project\final-report\Chapter4/chapter4.tex"
 Chapter 4.
-) [7
+) [8
 
 
 
 ] ("C:\Users\steven\Documents\university\year 4\major project\final-report\Chapter5/chapter5.tex"
 Chapter 5.
-) [8
+) [9
 
 
 
 ] ("C:\Users\steven\Documents\university\year 4\major project\final-report\Chapter6/chapter6.tex"
 Chapter 6.
-) [9
+) [10
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10
+ [11
 
 
 ]
 ("C:\Users\steven\Documents\university\year 4\major project\final-report\Appendix1/appendix1.tex"
 Appendix A.
-) [11
+) [12
 
 
 ] ("C:\Users\steven\Documents\university\year 4\major project\final-report\Appendix2/appendix2.tex"
@@ -389,14 +389,14 @@ Appendix B.
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 7.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [12
+) [13
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]) [14]
+ [14]) [15]
 ("C:\Users\steven\Documents\university\year 4\major project\final-report\final report.bbl"
 Underfull \hbox (badness 10000) in paragraph at lines 25--30
 \OT1/pcr/m/n/10.95 uk / []dcswww / Dept / Teaching / CourseNotes / current / CS27020 / Lectures /
@@ -422,7 +422,7 @@ Underfull \hbox (badness 4479) in paragraph at lines 68--72
 
 ) 
 AED: lastpage setting LastPage
-[15
+[16
 
 
 ] ("C:\Users\steven\Documents\university\year 4\major project\final-report\final report.aux"
@@ -441,20 +441,20 @@ AED: lastpage setting LastPage
 Here is how much of TeX's memory you used:
  3376 strings out of 493921
  49708 string characters out of 3147280
- 103145 words of memory out of 3000000
+ 103146 words of memory out of 3000000
  6499 multiletter control sequences out of 15000+200000
  26122 words of font info for 58 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,10n,45p,885b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,11n,45p,940b,405s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files
 /MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr
 8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
 utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on "final report.pdf" (22 pages, 127921 bytes).
+Output written on "final report.pdf" (23 pages, 131321 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
