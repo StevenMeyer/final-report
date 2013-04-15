@@ -1,22 +1,124 @@
-\chapter{Design}
+\cleardoublepage
+\chapter{Design}% 2358 words
 
 
 
-You should concentrate on the more important aspects of the design. It is essential that an overview is presented before going into detail. As well as describing the design adopted it must also explain what other designs were considered and why they were rejected.
+%You should concentrate on the more important aspects of the design. It is essential that an overview is presented before going into detail. As well as describing the design adopted it must also explain what other designs were considered and why they were rejected.
 
-The design should describe what you expected to do, and might also explain areas that you had to revise after some investigation.
+%The design should describe what you expected to do, and might also explain areas that you had to revise after some investigation.
 
-Typically, for an object-oriented design, the discussion will focus on the choice of objects and classes and the allocation of methods to classes. The use made of reusable components should be described and their source referenced. Particularly important decisions concerning data structures usually affect the architecture of a system and so should be described here.
+%Typically, for an object-oriented design, the discussion will focus on the choice of objects and classes and the allocation of methods to classes. The use made of reusable components should be described and their source referenced. Particularly important decisions concerning data structures usually affect the architecture of a system and so should be described here.
 
-How much material you include on detailed design and implementation will depend very much on the nature of the project. It should not be padded out. Think about the significant aspects of your system. For example, describe the design of the user interface if it is a critical aspect of your system, or provide detail about methods and data structures that are not trivial. Do not spend time on long lists of trivial items and repetitive descriptions. If in doubt about what is appropriate, speak to your supervisor.
+%How much material you include on detailed design and implementation will depend very much on the nature of the project. It should not be padded out. Think about the significant aspects of your system. For example, describe the design of the user interface if it is a critical aspect of your system, or provide detail about methods and data structures that are not trivial. Do not spend time on long lists of trivial items and repetitive descriptions. If in doubt about what is appropriate, speak to your supervisor.
 
 
-\section{Overall Architecture}
+\section{Overall Architecture}%Emergent design
+The system was to be produced using agile\slash XP principles, so  it should have been the case that the ideas of emergent design would give rise to a coherent design and good software as the project developed. Even with this principle in effect, it was clear that there was an overall design inherent to the project which separated it into distinct parts. These parts are:
+\begin{itemize}
+	\item The database model.
+	\item The diagram modelling tool and its interface.
+	\item Code to link the previous two parts and to also transform the model into XML.
+\end{itemize}
 
-\section{Some detailed design}
+With these parts, it could be seen that the design pattern model-view-controller (MVC) would be a suitable pattern for the overall design.
 
-\subsection{Even more detail}
+As the entire software was to be run on a single machine, all of the programming was designed with Java\-Script and its merits and limitations in mind.
 
-\section{User Interface}
+\section{Stories}
+The model, view and controller parts were not created as separate entities in isolation, as may be the case with a plan-driven process, but they evolved together over time as stories were implemented.
 
-\section{Other relevant sections}
+A story would describe a design so broad as ``As a user, I need to add tables to a database so that my database has entities.'' This would then be separated into its tasks for the model and for the view. These would be tasks such as ``A database should maintain a collection of tables'' and ``A database should allow tables to be added to its collection'', which would both be tasks for the model. The related tasks for the view would be similar; ``It should be possible to add a table to the database''.
+
+Following the principles of test-driven development, these tasks were used to create a black-box style test. Id est an expected outcome would be described and the test was considered satisfied provided that it passes, regardless of how the code accomplished the task. For example, a test would expect the outcome that the SVG has a new \emph{rect} (rectangle) element of the class `rect' after adding a table; how that came to be was not significant.
+
+\section{Coding Standards}
+\subsection{OOP and JavaScript}
+The model was designed to be entirely object-oriented. Java\-Script is not a class-based language as Java is and, unlike most OO languages, has a variety of patterns for supporting OO programming styles.
+
+CoffeeScript provides a class structure in order to simplify attaching functions to the prototype chain and also correctly handles the setting of the superclass. Coffee\-Script uses the pseudo-classical pattern. In this pattern, objects are created with the \texttt{new} keyword and a constructor function --- similar to conventional OO languages --- and (public) methods are attached to the object prototype.
+
+The prototype is used when member isn't found on the object itself. For example, if the object \texttt{foo} has no member \texttt{foo.bar}, then the engine looks for the object's constructor's prototype. This prototype object is inherited and, when used in this way, conserves memory as the members do not need to be copied to each instance.
+
+Prototype members are \emph{live} members; changes to the prototype will affect all current and future instances of the object. As a result, it is not a useful pattern for private members. The conventional handling of private members for this pattern is to prepend their names with an underscore. While this is useful for creating `protected' members (Java\-Script has no support for true protected members), it still exposes the member publicly as both readable and writeable.
+
+In order to handle private members, it was decided that the all-in-one constructor pattern would also be used, but only for this purpose. This pattern adds all members to the object in the constructor and doesn't make use of the prototype at all. This is not entirely desirable, as inheritance breaks down somewhat (the \texttt{instanceof} keyword doesn't work, here) and every instance carries all of its members (no shared prototype object). It does encapsulate private members, though, and the pattern allows for the creation of `privileged' members; publicly accessible members which have access to private members.
+
+It was decided that all Java\-Script objects would follow these rules:
+\begin{itemize}
+	\item Private members would be defined in the constructor (all-in-one constructor pattern).
+	\item Public members requiring access to private members (privileged members) would be defined in the constructor (all-in-one constructor pattern).
+	\item Public members which are not privileged would be attached to the prototype (classical pattern).
+\end{itemize}
+
+\subsection{CoffeeScript}
+Functions in Coffee\-Script are defined by the means of
+\begin{alltt}variable = (param1, param2, \ldots, param\slshape{n}\upshape) -> function here\end{alltt}
+Where a function has no specified parameters, it is permitted in Coffee\-Script to omit the brackets and start the function with the arrow (\texttt{->}). However, it was decided that functions without specified parameters would always include the empty brackets in order to clarify that the function is intended to have no parameters. It also serves an \ae{}sthetic function, causing it to become easier to identify functions.
+
+\section{Model}
+The model was designed to closely model the Propel schema reference. The structure of the XML schema document was to be represented in the model. As and when the agile method required them, this lead to the creation of 6 objects: Database, Table, Column, Foreign Key, Index and Unique Index. Foreign Key, Index and Unique Index were consigned to iterations beyond the time-frame available to the project as modelling tables and columns were deemed to deliver the greatest value.
+
+The schema hierarchy has columns contained within tables, which, in turn, are contained within a database element. This becomes problematic when one considers that each element can inherit attributes from its container. As tables are referenced from the database in the model (Database ``has a'' Table), the table would require a reference to the database object for its values. This approach would have introduced tight coupling into the software which was rejected as bad practice. In order to flag those values which were to be inherited to differentiate them from those with their own values, a static-like variable was introduced to the models. Values which were to be inherited from the container were set thus:
+\begin{alltt}table.setPhpNamingMethod Table.INHERIT\end{alltt}
+As the output XML would not require the true value, the inheritance would not need to be resolved by the software.
+
+JavaScript was selected as the programming language of choice by the merit of its inclusion on most platforms, devices and web browsers. Such penetration could not be matched by any other language available; Java requires a JVM installed and native programs are inherently restricted to their native platform. It also ties in conveniently with the other technology in use for the view and controller --- that of HTML5 and SVG. All three are available together in most modern web browsers.
+
+\section{View}
+While researching other database modelling software, it was discovered that an oft lacking feature in demand in the forums was the ability to save the diagram as an image. With this in mind, the decision was made to have the diagram as an image, rather than using some other display technology such as HTML\slash HTML5 canvas or Adobe Flash. By using an image as the view, it would remove the need to convert the model into an image at a later stage and all of the complexities and potential incompatibilities which would accompany such a choice. That which was visible in the view would be exactly that which was in any exported image.
+
+\subsection{SVG}
+Scalar vector graphics (SVG) are images created by XML. This means that they can be created and interacted with programmatically by means of manipulation of the SVG's DOM. Being a vector image format also gives any exported image can be scaled without any loss of quality, unlike rasterised bitmap images which are limited in their resolution.
+
+SVG are supported by all major browsers in their modern versions. This has the implication that no extra software or plug-ins are required to use the software, unlike other rich technology such as Flash or Micro\-soft Silver\-light.
+
+As the file is of an XML format, the semantics of the diagram and interface can be marked-up with ARIA attributes to improve the accessibility. This is unlike other RIA programs which may not have the same accessibility support as a web browser does.
+
+SVG suffers from rendering speed degradation as DOM complexity increases. As this project will likely only be drawing a limited quantity of rectangles, text and lines per table, was deemed unlikely that this would cause problems for anything but very large schemata.
+
+It was decided that jQuery would be used to interact with the SVG. Some of the jQuery library's function do not support SVG as completely as they do HTML, but these are clearly noted in the jQuery documentation and the work-arounds, where required, should not require a great deal of Java\-Script.
+
+\subsection{HTML5 Canvas and HTML}
+HTML5 canvas was considered due its Java\-Script API and its standalone support in major browsers. However, it was quickly rejected as it lacks the capability for dynamic components. In SVG the individual entities can be interacted with whereas the entire HTML5 canvas must be redrawn in order to alter it. Such behaviour would degrade the user experience for schemata with more than a few tables, as larger and larger canvasses (images) would need to be redrawn every time something is added, removed or moved as the number of tables increases.
+
+HTML was considered for its superior support and superior accessibility, but the advantages of SVG caused HTML to be rejected. HTML would also require an interpreter to create an image of the diagrams.
+
+\section{Controller and User Interface}
+The controller was designed to maintain the Java\-Script model, ensure the integrity of the SVG view, and to handle the interaction between the two.
+
+The controller was designed to be in two main parts: a jQuery plugin to interact with the view and an HTML5\slash Twitter Bootstrap API to allow the user to change the model and view. The latter consists of an HTML5 interface from which the user can add tables and such with some Java\-Script to control the model; the interface delegates view interaction to the jQuery plugin.
+
+In order that this interface be testable, the components of the Twitter Bootstrap framework were created as Java\-Script objects which extend the jQuery object. Having the components as controllable objects instead of simple HTML to be inserted into the DOM allowed the interface to be constructed in such a way that it was predictable, testable and much simpler to read in the code. Rather than constructing many snippets of HTML, one can create an object and expect certain functions to be present. These functions replace the many jQuery functions required to do the same task with one function call. Having them extend jQuery enables them to function as jQuery object, with all of the functionality that jQuery allows.
+
+Using the Twitter Bootstrap framework also presents the user with a familiar interface as the same framework is becoming more popular on the world wide web. It is also well tested and polished, reducing the work required for the user interface in this project.
+
+Another key reason for using jQuery and Twitter Bootstrap is in the fact that both are designed to work well and consistently in all browsers and on all devices. This is important as it reduces the amount of work which would otherwise be required to work around the major and minor nuances of the different Java\-Script engines, rendering engines and platforms, such as the notoriously unwieldy Internet Explorer 7.
+
+\section{Other Technology}
+\subsection{Adobe Flash}
+Adobe Flash has a scripting API available and is capable of performing as a user interface for the software. It is not a native part of a web browser or system, but is often present on many systems due to its pervasive usage for both local content and on the world wide web. However, Flash is in decline on mobile devices and Adobe has discontinued its support for mobile platforms. While this was not a reason to reject it (this project is not aimed at mobile support, yet), it sets a precedent for Flash's future as developers will not be too happy to produce desktop content in Flash and mobile content in HTML5.
+
+Flash is also not an open standard and this fact combined with the previous information and the fact that taking the time to learn Flash would not have been in the best interests of the project resulted in Flash not being considered for use.
+\subsection{Microsoft Silverlight}
+Microsoft Silverlight is an application framework for RIAs. While this project does not require an internet connection, Silverlight could still have been used to create the project. The interfaces of Silverlight applications have an API accessible by a subset of Microsoft's .NET framework.
+
+Silverlight is available on Linux and FreeBSD by the use of the Moonlight project. However, the team responsible for the project --- the Mono team --- have abandoned its development. There are also issues with the licensing agreement between Microsoft and Novell and the product's penetration and use (or lack thereof).
+
+Silverlight was rejected for similar reasons to that of Flash.
+
+\subsection{Java and JavaFX}
+Oracle has recently introduced JavaFX for creating user interfaces using Java for Java applications and RIAs. JavaFX would not have been an unreasonable choice for developing the model and the view as it could support all of the features required for the model, view and controller and handled the interactions between them. Java was rejected in favour of Java\-Script, HTML5 and SVG as these are available without the need to install extra software on most platforms.
+
+\section{Other design decisions}
+\subsection{Boilerplate}
+It was decided that the HTML5 boilerplate template generator \emph{Initializr} would be used to generate the base code to start the view and controller. This generator creates the index.html page which includes some boilerplate code for displaying correct content in browsers and it also includes the Twitter Bootstrap CSS and Java\-Script, the latest jQuery Java\-Script, the Modernizr feature detection Java\-Script and some extraneous pieces which are more useful for content which is to be served over the web.
+
+Modernizr detects the HTML5 and CSS3 features which the browser supports. Initially, this is of limited use, but as the project progresses it may become useful to have feature detection. This has been included in the project against the principles of agile development as it comes with the Initializr package.
+
+%\section{Some detailed design}
+
+%\subsection{Even more detail}
+
+%\section{User Interface}
+
+%\section{Other relevant sections}

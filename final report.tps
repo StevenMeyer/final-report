@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=Chapter2\chapter2.tex
 
 [Frame0_View0,0]
-TopLine=0
-Cursor=3758
+TopLine=15
+Cursor=2780
 
 [Frame1]
 Flags=0
@@ -32,11 +32,11 @@ NormalPos.top=26
 NormalPos.right=1562
 NormalPos.bottom=706
 Class=LaTeXView
-Document=abstract.tex
+Document=dissertation.tex
 
 [Frame1_View0,0]
-TopLine=0
-Cursor=1434
+TopLine=51
+Cursor=1943
 
 [Frame2]
 Flags=0
@@ -50,11 +50,11 @@ NormalPos.top=26
 NormalPos.right=1562
 NormalPos.bottom=706
 Class=LaTeXView
-Document=mmp.sty
+Document=Chapter1\chapter1.tex
 
 [Frame2_View0,0]
-TopLine=268
-Cursor=8226
+TopLine=0
+Cursor=6025
 
 [Frame3]
 Flags=0
@@ -68,11 +68,11 @@ NormalPos.top=26
 NormalPos.right=1562
 NormalPos.bottom=706
 Class=LaTeXView
-Document=Chapter1\chapter1.tex
+Document=abstract.tex
 
 [Frame3_View0,0]
 TopLine=0
-Cursor=3126
+Cursor=1434
 
 [Frame4]
 Flags=0
@@ -86,11 +86,11 @@ NormalPos.top=26
 NormalPos.right=1562
 NormalPos.bottom=706
 Class=LaTeXView
-Document=dissertation.tex
+Document=mmp.sty
 
 [Frame4_View0,0]
-TopLine=51
-Cursor=2096
+TopLine=268
+Cursor=8226
 
 [Frame5]
 Flags=0

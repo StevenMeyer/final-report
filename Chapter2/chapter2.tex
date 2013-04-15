@@ -1,6 +1,6 @@
 %\addcontentsline{toc}{chapter}{Development Process}
 \cleardoublepage
-\chapter{Development Process}% 721 words
+\chapter{Development Process}% 723 words
 
 %You need to describe briefly the life cycle model that you used. Do not force your project into the waterfall model if it is better described by prototyping or some other evolutionary model. You do not need to write about all of the different process models that you are aware of. Focus on the process model that you have used. It is possible that you needed to adapt an existing process model to suit your project; clearly identify what you used and how you adapted it for your needs.
 
@@ -13,6 +13,8 @@
 
 %\section{Modifications}
 %Did you have to modify the model to suit a one-person project. If so, what did you change and why? 
+
+% STILL NEED TO TALK ABOUT RELEASE PLANNING AND ITERATION PLANNING
 \section{Process Methodology}
 \subsection*{Selection}
 A schema diagram consists of a few main parts: the tables; the columns; and relationships. These are hierarchical in nature --- tables have columns, columns have attributes and relationships depend on tables most significantly and then on columns. When viewed in this manner, it can be seen that an evolutionary process model can be used to develop the system.
@@ -33,7 +35,7 @@ Some XP components had to be modified to cater to the requirements of the projec
 The YAGNI process was also relaxed slightly in order to accommodate for patterns for which it was clear would be required at a later date, but which would be prohibited by an XP purist as such action would be deemed superfluous in the instance in which it was being created. This decision was intended to reduce the amount (and cost) of refactoring which would be required when the XP process would eventually call for it.
 
 \subsection*{Requirements Specification}
-Stories were committed to story cards to be arranged on a board in the vicinity of the development environment, but for stories which had been broken down into detailed tasks were committed to !PROGRAM! tickets. This program allows for tickets to be assigned, have comments added, and ultimately closed as completed allowing the work-flow to be documented and visualised.
+Stories were committed to story cards to be arranged on a board in the vicinity of the development environment, but for stories which had been broken down into detailed tasks were committed to tickets using Trac. This program allows for tickets to be assigned, have comments added, and ultimately closed as completed allowing the work-flow to be documented and visualised.
 
 \section{Tools}
 The first implementation of the software was written in XSLT and JavaScript --- the same programming languages as the intended design tool, \mbox{WWWSQLDesigner}. The final implementation which included a designer used JavaScript, scalar vector graphics (SVG), and HTML5. These programming languages were selected because of their ubiquitous support on all major platforms; all of these are available in most major web browsers. It was decided that the Java\-Script would be compiled from Coffee\-Script. This is mainly due to Coffee\-Script's standardised way of dealing with classes in Java\-Script and because the compiled Java\-Script is purportedly more readable than and executes as fast as or faster than equivalent JS written without Coffee\-Script and which is also pretty-printed and passes through JSLint without generating warnings (or errors).

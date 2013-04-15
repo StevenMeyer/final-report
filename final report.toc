@@ -7,23 +7,34 @@
 \contentsline {section}{\numberline {2.2}Tools}{6}
 \contentsline {chapter}{\numberline {3}Design}{7}
 \contentsline {section}{\numberline {3.1}Overall Architecture}{7}
-\contentsline {section}{\numberline {3.2}Some detailed design}{7}
-\contentsline {subsection}{\numberline {3.2.1}Even more detail}{7}
-\contentsline {section}{\numberline {3.3}User Interface}{7}
-\contentsline {section}{\numberline {3.4}Other relevant sections}{7}
-\contentsline {chapter}{\numberline {4}Implementation}{8}
-\contentsline {chapter}{\numberline {5}Testing}{9}
-\contentsline {section}{\numberline {5.1}Overall Approach to Testing}{9}
-\contentsline {section}{\numberline {5.2}Automated Testing}{9}
-\contentsline {subsection}{\numberline {5.2.1}Unit Tests}{9}
-\contentsline {subsection}{\numberline {5.2.2}User Interface Testing}{9}
-\contentsline {subsection}{\numberline {5.2.3}Stress Testing}{9}
-\contentsline {subsection}{\numberline {5.2.4}Other types of testing}{9}
-\contentsline {section}{\numberline {5.3}Integration Testing}{9}
-\contentsline {section}{\numberline {5.4}User Testing}{9}
-\contentsline {chapter}{\numberline {6}Evaluation}{10}
-\contentsline {chapter}{Appendices}{11}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{12}
-\contentsline {chapter}{\numberline {B}Code samples}{13}
-\contentsline {section}{\numberline {2.1}Random Number Generator}{13}
-\contentsline {chapter}{Annotated Bibliography}{16}
+\contentsline {section}{\numberline {3.2}Stories}{7}
+\contentsline {section}{\numberline {3.3}Coding Standards}{8}
+\contentsline {subsection}{\numberline {3.3.1}OOP and JavaScript}{8}
+\contentsline {subsection}{\numberline {3.3.2}CoffeeScript}{8}
+\contentsline {section}{\numberline {3.4}Model}{9}
+\contentsline {section}{\numberline {3.5}View}{9}
+\contentsline {subsection}{\numberline {3.5.1}SVG}{9}
+\contentsline {subsection}{\numberline {3.5.2}HTML5 Canvas and HTML}{10}
+\contentsline {section}{\numberline {3.6}Controller and User Interface}{10}
+\contentsline {section}{\numberline {3.7}Other Technology}{11}
+\contentsline {subsection}{\numberline {3.7.1}Adobe Flash}{11}
+\contentsline {subsection}{\numberline {3.7.2}Microsoft Silverlight}{11}
+\contentsline {subsection}{\numberline {3.7.3}Java and JavaFX}{11}
+\contentsline {section}{\numberline {3.8}Other design decisions}{11}
+\contentsline {subsection}{\numberline {3.8.1}Boilerplate}{11}
+\contentsline {chapter}{\numberline {4}Implementation}{13}
+\contentsline {chapter}{\numberline {5}Testing}{14}
+\contentsline {section}{\numberline {5.1}Overall Approach to Testing}{14}
+\contentsline {section}{\numberline {5.2}Automated Testing}{14}
+\contentsline {subsection}{\numberline {5.2.1}Unit Tests}{14}
+\contentsline {subsection}{\numberline {5.2.2}User Interface Testing}{14}
+\contentsline {subsection}{\numberline {5.2.3}Stress Testing}{14}
+\contentsline {subsection}{\numberline {5.2.4}Other types of testing}{14}
+\contentsline {section}{\numberline {5.3}Integration Testing}{14}
+\contentsline {section}{\numberline {5.4}User Testing}{14}
+\contentsline {chapter}{\numberline {6}Evaluation}{15}
+\contentsline {chapter}{Appendices}{16}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{17}
+\contentsline {chapter}{\numberline {B}Code samples}{18}
+\contentsline {section}{\numberline {2.1}Random Number Generator}{18}
+\contentsline {chapter}{Annotated Bibliography}{21}
