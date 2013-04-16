@@ -1,7 +1,52 @@
 \cleardoublepage
-\chapter{Implementation}
+\chapter{Implementation} % 1266 words
 
-The implementation should look at any issues you encountered as you tried to implement your design. During the work, you might have found that elements of your design were unnecessary or overly complex, perhaps third party libraries were available that simplified some of the functions that you intended to implement. If things were easier in some areas, then how did you adapt your project to take account of your findings?
+%The implementation should look at any issues you encountered as you tried to implement your design. During the work, you might have found that elements of your design were unnecessary or overly complex, perhaps third party libraries were available that simplified some of the functions that you intended to implement. If things were easier in some areas, then how did you adapt your project to take account of your findings?
 
-It is more likely that things were more complex than you first thought. In particular, were there any problems or difficulties that you found during implementation that you had to address? Did such problems simply delay you or were they more significant? Your implementation might well be described in the same chapter as Problems (see below).
+%It is more likely that things were more complex than you first thought. In particular, were there any problems or difficulties that you found during implementation that you had to address? Did such problems simply delay you or were they more significant? Your implementation might well be described in the same chapter as Problems (see below).
 
+\section{WWW SQL Designer}
+\subsection{XSLT}
+The test-driven development of the XSLT for the initial version of the software was reasonably straight-forward. The main issues arose from the lack of familiarity with XSL transforms, generally, as instruction for executing certain transforms frequently had to be looked-up in the early stages of the development.
+
+One drawback with using the XSLTunit framework was in the engine's lack of support for importing tree fragments from external documents. This issue stemmed from the engine's poor implementation of the EXSLT (XSLT extension) for importing tree fragments, rather than an issue with the unit testing framework. In not having this extension available, it became the case that XML had to be embedded in every test which was specific to that test in which it was embedded. Having one block of test XML would have ensured consistent behaviour from the XSLT, rather than the emergent situation where the tests only proved their validity with the XML in isolation. It also increased the size of the tests.
+
+The XSL, alone, could not model the Propel schema in its entirety. The WWW SQL Designer software was intended to be a generic schema designer for as many different database back-ends as possible. In this regard, it has the same aims as Propel which aims to provide a level of abstraction from the database back-ends. However, the Propel schema adds Propel-specific instructions\slash attributes to the elements it describes, some of which do not have bearing on the databases, but should be included in the schema nonetheless.
+
+\subsection{oz.js Library}
+In order to extend the software to include this extra detail, the Java\-Script and user interface needed to be altered.
+
+The original author of the software, Ond\v{r}ej \v{Z}\'{a}ra, has included a Java\-Script library of his own creation, oz.js, to handle advanced Java\-Script constructs such as custom events and class-like inheritance. This library is used extensively throughout the project. However, when examining the code in order to interact with the models, it was not possible to discover a method for extracting the models from the data structures in this library. Handles to the model object could be retrieved, but they were lacking the functions which seemed to be available inside of the library. This resulted in the models being uneditable without modifications to the library, which it was decided was outside of the scope of the project and would have required much learning in order to understand the library.
+
+A post on the Google Code mini-site for the project suggested that the WWW SQL Designer project make use of the jQuery library, as this library has a larger user base and is better documented. This would allow developers to contribute to the project without requiring them to first learn how to use the new library.
+
+It was this difficulty and the previously discussed post which prompted the decision to abandon the WWW SQL Designer project and create a new system from the ground up using more popular frameworks and libraries. The move would allow the designer to be built with Propel in mind and to address other issues with \v{Z}\'{a}ra's project, such as the ability to save the schema as an image.
+
+\section{Propel Designer}
+\subsection{CoffeeScript}
+CoffeeScript was a new programming language for the developer and, as a result, had to be learnt in order that it would be usable. However, as the body of the code is either Java\-Script or code which compiles 1:1 into Java\-Script, the learning curve is minimised greatly. There were occasions where the language was so different that the code had to be prototyped in the Coffee\-Script real-time compiler on the Coffee\-Script website in order to discover exactly how to structure the required Java\-Script code as Coffee\-Script.
+
+\subsection{jQuery and SVG}
+jQuery was the library of choice for interacting with the DOM. This included the DOM fragment which was the SVG used for the view. jQuery is designed for the HTML DOM specifically, and this raised a few problems with the slightly different DOM of the SVG specification. These were mainly problems relating to jQuery's class methods as SVG elements maintain their classes differently to HTML elements. There are also some jQuery functions which do not exhibit the same behaviour with XML (and, by extension, SVG) as they do HTML. These were overcome by using workaround such as getting the ClassList property and performing standard Java\-Script string functions upon it to imitate jQuery's class functions.
+
+There exists some jQuery plugins to address the issues with SVG, but these require a custom version of the jQuery library in order to make the plug-ins usable and so it was decided that the work-arounds were a better compromise than a modified library, which may not be as up-to-date as recent trunk libraries.
+
+\subsection{Propel Inheritance}
+Determining a method by which to implement Propel's attribute inheritance from ancestor elements proved to be problematic as the inheritance direction is the opposite way around to that of the OO inheritance approach being used. A substantial amount of time was consumed in exploring this, and the outcome is described in the design section \ref{sec:DesignModel}. As the Propel software determines inherited values at compile-time (when compiling the schema to produce PHP objects and SQL), this software does not need to concern itself with the actual values, but whether an attribute is defined or inherited is still a concern.
+
+\subsection{The User Interface}
+\subsubsection{Bootstrap}
+When building the UI from snippets of jQuery and Java\-Script, it was found that there was a considerable amount of repetition and duplication and should have required additional testing frameworks. Using the Twitter Bootstrap had saved a considerable amount of work with regard to style, but simple tasks such as alerts and changing styles where the cause of much duplication and causing the code to become difficult to read.
+
+The UI, in its first incarnation, was mainly hacked together to display the correct buttons, dialogues and inputs. This approach quickly caused the code quality to deteriorate, introduced bugs and duplication and was ultimately unreliable and not testable.
+
+A scripted version of the Bootstrap components could not be located, and the similar interfaces also called for bespoke reusable objects. Such objects could be tested using Java\-Script testing frameworks which were already in place. The object created extend the jQuery object and can decorate jQuery objects to extend their functionality. This created some very powerful UI objects, with repetitive operations having their own functions such as
+\begin{alltt}inputcontrolgroup.error("Oh, snap!")\end{alltt}
+which would handle changing the class to use the in-built Bootstrap style and also add the text to the expected place. By extending the jQuery object, a developer could interact with the HTML in the same way in which they would in normal circumstances.
+
+While this development added some useful and powerful features to the UI, it was also time-consuming to create and perhaps should be broken out into a project in its own right. It did allow for tests using the existing JSunit framework and, as a result, a predictably scripted user interface.
+
+\subsubsection{File API}
+The decision to load and save directly from XML files on the host machine also created a substantial amount of work. This is due to Java\-Script engines' paranoia with regards to file-system access from within Java\-Script. These are security concerns relating to arbitrary file-system access from potentially malicious scripts over the internet. However, HTML5 introduced a File API which allows end-users to select files from their file-system with which a script can read from and, occasionally, write to.
+
+The File Writer API was briefly examined and appears to have volatile support in view of its security implications. Writing to files did not fit into the final iteration, however.

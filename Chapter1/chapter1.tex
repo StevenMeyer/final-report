@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Background \& Objectives} % 973 words
+\chapter{Background \& Objectives} % 976 words
 \section{Background}
 Data modelling and database design are vast topic areas accompanied by many volumes of published theory and literature. This project focusses on a fragment of the topic; conceptual design\slash schemata. Specifically, it is concerned with entity relationship (ER) grammar and mainly with ER diagrams.
 
@@ -51,7 +51,7 @@ The project had these stretch goals which were available if the core goals were 
 \section{Related Systems}
 As previously discussed, there are many existing `database designers' available. One such product which has native support for ORMs, including Propel, is ORM Designer. However, this product is closed-source and costs \euro99 for a single licence.
 
-The initial design for this project was to extend an existing software to include support for Propel schema. Of the various free modelling tools which were investigated, WWWSQLDesigner by Ondrej Zara was selected to be extended. This designer produces its own XML from RM diagrams, and database-specific SQL is generated from this using XSL transforms. The software is written in JavaScript and HTML meaning that it should run on any platform with a web browser making it a portable application and fulfilling one of the goals of this project.
+The initial design for this project was to extend an existing software to include support for Propel schema. Of the various free modelling tools which were investigated, WWW SQL Designer by Ond\v{r}ej \v{Z}\'{a}ra was selected to be extended. This designer produces its own XML from RM diagrams, and database-specific SQL is generated from this using XSL transforms. The software is written in JavaScript and HTML meaning that it should run on any platform with a web browser making it a portable application and fulfilling one of the goals of this project.
 
 There are flaws in the software, however, which limited its usefulness for modelling Propel schema (or, indeed, any database) such as lack of composite key support and other incompatibilities with transforming the XML. It also used an in-house JavaScript library created by Zara which made modifying the code to add extra features a challenge. It also has no facility to save the diagram as an image.
 

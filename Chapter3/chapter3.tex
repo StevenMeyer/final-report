@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Design}% 2358 words
+\chapter{Design}% 2372 words
 
 
 
@@ -55,7 +55,7 @@ Functions in Coffee\-Script are defined by the means of
 \begin{alltt}variable = (param1, param2, \ldots, param\slshape{n}\upshape) -> function here\end{alltt}
 Where a function has no specified parameters, it is permitted in Coffee\-Script to omit the brackets and start the function with the arrow (\texttt{->}). However, it was decided that functions without specified parameters would always include the empty brackets in order to clarify that the function is intended to have no parameters. It also serves an \ae{}sthetic function, causing it to become easier to identify functions.
 
-\section{Model}
+\section{Model}\label{sec:DesignModel}
 The model was designed to closely model the Propel schema reference. The structure of the XML schema document was to be represented in the model. As and when the agile method required them, this lead to the creation of 6 objects: Database, Table, Column, Foreign Key, Index and Unique Index. Foreign Key, Index and Unique Index were consigned to iterations beyond the time-frame available to the project as modelling tables and columns were deemed to deliver the greatest value.
 
 The schema hierarchy has columns contained within tables, which, in turn, are contained within a database element. This becomes problematic when one considers that each element can inherit attributes from its container. As tables are referenced from the database in the model (Database ``has a'' Table), the table would require a reference to the database object for its values. This approach would have introduced tight coupling into the software which was rejected as bad practice. In order to flag those values which were to be inherited to differentiate them from those with their own values, a static-like variable was introduced to the models. Values which were to be inherited from the container were set thus:
@@ -113,7 +113,7 @@ Oracle has recently introduced JavaFX for creating user interfaces using Java fo
 \subsection{Boilerplate}
 It was decided that the HTML5 boilerplate template generator \emph{Initializr} would be used to generate the base code to start the view and controller. This generator creates the index.html page which includes some boilerplate code for displaying correct content in browsers and it also includes the Twitter Bootstrap CSS and Java\-Script, the latest jQuery Java\-Script, the Modernizr feature detection Java\-Script and some extraneous pieces which are more useful for content which is to be served over the web.
 
-Modernizr detects the HTML5 and CSS3 features which the browser supports. Initially, this is of limited use, but as the project progresses it may become useful to have feature detection. This has been included in the project against the principles of agile development as it comes with the Initializr package.
+Modernizr detects the HTML5 and CSS3 features which the browser supports. Initially, this is of limited use, but as the project progresses it may become useful to have feature detection. While this may seem at odds with the principles of agile development, Modernizr also includes scripts to add HTML5 functionality to browsers which don't support them natively and has been included for this reason.
 
 %\section{Some detailed design}
 
