@@ -1,3 +1,83 @@
 \chapter{Third-Party Code and Libraries}
 
-If you have made use of any third party code or software libraries, i.e. any code that you have not designed and written yourself, then you must include this appendix. As has been said in lectures, it is acceptable and likely that you will make use of third-party code and software libraries. The key requirement is that we understand what is your original work and what work is based on that of other people. Therefore, you need to clearly state what you have used and where the original material can be found. Also, if you have made any changes to the original versions, you must explain what you have changed. 
+%If you have made use of any third party code or software libraries, i.e. any code that you have not designed and written yourself, then you must include this appendix. %As has been said in lectures, it is acceptable and likely that you will make use of third-party code and software libraries. The key requirement is that we understand what is your original work and what work is based on that of other people. %Therefore, you need to clearly state what you have used and where the original material can be found. Also, if you have made any changes to the original versions, you must explain what you have changed. 
+
+\section{jQuery}
+The jQuery Java\-Script library is used extensively throughout the view and the controller sections of this project. It can clearly been seen in use as a function call in Java\-Script called \texttt{jQuery()} or, more commonly, as \texttt{\$()}. It is used wherever DOM traversal and manipulation and event handling are required. It is also used in those unit tests which require these functions.
+
+This library was included in its original form as version 1.9.1, minified. It was bundled with other Java\-Scripts by Initializr. The original source can be obtained from \url{http://jquery.com/download/} or from \url{http://github.com/jquery/jquery}.
+
+It resides in the file \verb|public_html/js/vendor/jquery-1.9.1.min.js|. The development version is also in this location.
+
+jQuery is licensed under the MIT licence.
+
+\section{Modernizr}
+The Modernizr Java\-Script library is not utilised by any of the code created as part of this project. It is a self-contained Java\-Script file which contains shims to implement HTML5 behaviour in browsers which do not support all of the HTML5 features. It is linked in by the projects only web page, \texttt{index.html}, by means of a script tag. It may enjoy use from other libraries, but none of those sources were created for this project.
+
+This library was included in its original form as version 2.6.2, minified. It was bundled with other Java\-Scripts by Initializr. The original source can be obtained from \url{http://modernizr.com/download/} or from \url{https://github.com/Modernizr/Modernizr}.
+
+It resides in the file
+\begin{verbatim}public_html/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js\end{verbatim}
+
+Modernizr is licensed under the MIT licence.
+
+\section{Twitter Bootstrap}
+The Twitter Bootstrap consists of two parts: the Bootstrap components and some jQuery plug-ins. The components are CSS styles, and these are included in the project as compiled and minified CSS files. These styles are used by means of class names in the HTML parts of the project and in the arrangement of mark-up.
+
+The jQuery plug-ins included as part of the framework are:
+\begin{itemize}
+	\item Transitions
+	\item Modals
+	\item Dropdowns
+	\item Scrollspy
+	\item Togglable tabs
+	\item Tooltips
+	\item Popovers
+	\item Affix
+	\item Alert messages
+	\item Buttons
+	\item Collapse
+	\item Carousel
+	\item Typeahead
+\end{itemize}
+
+Only Transitions, Modals, Dropdowns and Alert messages are currently used by the front-end and the Bootstrap API mini-project. All of the plug-ins are included by default by Initializr. They are all contained in one Java\-Script file.
+
+Twitter Bootstrap also includes a set of icon sprites by Glyphicons called Halflings. Some of these are used in the front-end in the Add, Save and Load buttons.
+
+The CSS and bundled Java\-Scripts are included in their original form as version 2.3.0, minified. The source can be obtained from \url{http://twitter.github.io/bootstrap/assets/bootstrap.zip} or from \url{http://github.com/twitter/bootstrap}.
+
+The CSS, JavaScript and sprites reside at
+\begin{verbatim}
+public_html/css/bootstrap-min.css
+public_html/css/bootstrap-responsive.min.css
+public_html/js/vendor/bootstrap.min.js
+public_html/img/glyphicons-halflings.png
+public_html/img/glyphicons-halflings-white.png
+\end{verbatim}
+
+Twitter Bootstrap code is licensed under the Apache License v2.0.
+
+\section{JsUnit}
+JsUnit is the project name of multiple JavaScript unit testing frameworks. The project in use in, here, is by Pivotal\slash Edward Hieatt. The framework is no longer actively developed or supported, but the tests have been written and may in the future be transposed to another framework.
+
+All Java\-Script testing uses this framework. All content in the \texttt{test/jsunit/} location is unmodified, with the exception of the unit tests written for this dissertation project. These created files are distinguished from the unit testing tests and example tests by their being suffixed with `Test' or being a Java\-Script file. These are in the \texttt{test/jsunit/tests} location.
+
+The version included with the project is indeterminate and may not be the same version available at \url{https://github.com/pivotal/jsunit}.
+
+JsUnit is licensed under the GNU GPL licence.
+
+\section{H5BP --- HTML5 Boilerplate}
+The Initializr bundle has included some additional files and partial files. These are the remaining files in \verb|public_html| which are not index.html and sample.xml. These other files are:
+\begin{itemize}
+	\item \texttt{.htaccess}. A sample Apache configuration file. As this project is designed for a local machine, this file is not required or used.
+	\item \texttt{404.html}. A boiler-plate File Not Found error page. This is designed for web servers, and is not used.
+	\item Apple touch icons. These are used when the project is used on an Apple touch device.
+	\item \texttt{favicon.ico}. This icon would be displayed in the title bar on a web page.
+	\item \texttt{humans.txt}. A human-readable description of the website. It has not been populated, yet.
+	\item \texttt{robots.txt}. A sample file to advise web robots on how to traverse the site. It is not used.
+\end{itemize}
+
+A boiler-plate index.html file was bundled with Initializr. This file has been modified for the project, but still contains the ``Chrome Frame'' and the Java\-Script to load jQuery and the Twitter Bootstrap jQuery plug-ins. It also retains the \texttt{link} elements with link the Bootstrap stylesheets.
+
+HTML5 Boilerplate is licensed under the MIT licence.

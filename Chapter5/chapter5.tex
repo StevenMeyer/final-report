@@ -1,21 +1,53 @@
+\cleardoublepage
 \chapter{Testing}
 
-Detailed descriptions of every test case are definitely not what is required here. What is important is to show that you adopted a sensible strategy that was, in principle, capable of testing the system adequately even if you did not have the time to test the system fully.
+%Detailed descriptions of every test case are definitely not what is required here. What is important is to show that you adopted a sensible strategy that was, in principle, capable of testing the system adequately even if you did not have the time to test the system fully.
 
-Have you tested your system on 'real users'? For example, if your system is supposed to solve a problem for a business, then it would be appropriate to present your approach to involve the users in the testing process and to record the results that you obtained. Depending on the level of detail, it is likely that you would put any detailed results in an appendix.
+%Have you tested your system on 'real users'? For example, if your system is supposed to solve a problem for a business, then it would be appropriate to present your approach to involve the users in the testing process and to record the results that you obtained. Depending on the level of detail, it is likely that you would put any detailed results in an appendix.
 
 \section{Overall Approach to Testing}
-
-\section{Automated Testing}
+This project was designed using a test-first design process. This process applied to every fragment of code in the project ergo it can be said with confidence that every line of code is tested, at least at the modular level. These tests validate that the code produces predictable objects and code.
 
 \subsection{Unit Tests}
+All of the tests in this project have been written in Java\-Script as JsUnit unit-style tests. This has come to be as a result of the extensive use of Coffee\-Script\slash Java\-Script throughout the project. As the software is programmed in Java\-Script, so the tests are written in Java\-Script.
 
-\subsection{User Interface Testing}
+\subsubsection{Model Testing}
+The unit tests came about as implementation checks for the tasks which, themselves, were a break-down of the design stories. In the nature of TDD, the tests would be written so that they would fail initially. The code was then created which would satisfy the test conditions. Although testing in this way can only prove that the implementation works as expected for the given test code, it is reasonable to expect that it works in the expected way for all cases.
 
-\subsection{Stress Testing}
+Formal methods could have been used to completely verify and validate the design and the code, but such an undertaking would have required considerable time and effort and, as such, was not deemed appropriate for this project; unit testing provides adequate reassurance.
 
-\subsection{Other types of testing}
+\subsubsection{User Interface Testing}
+Rather than using a dedicated UI testing framework, the JsUnit framework was also used to test the UI. This was deemed an adequate testing solution as the UI was constructed from jQuery objects and the Twitter Bootstrap library. As the Bootstrap library was built, so unit tests had been created to validate the code. Bespoke components created from these library objects were also unit tested and so this gave reasonable assurance that the UI component would be created in a predictable manner.
 
-\section{Integration Testing}
+In this way, it was possible to build the front-end without a user interface testing framework. Unit testing could not verify attributes such as the positioning of element in the web page, but the Twitter Bootstrap has extensively tested positioning and layout properties built in, so these were not a concern for this project. The style, layout and positioning of Twitter Bootstrap components is predictable and consistent.
 
-\section{User Testing}
+\section{Other Testing Methods}
+
+\subsection{Automated Testing}
+The unit testing for this project is not automated. It was decided that the project was sufficiently small enough omit automatic testing.
+
+To ensure that code changes had not affected the code in other parts of the system, the test suite was executed in full every time a new test was written (to prove that the new test failed) and when code was modified. These tests are sufficiently few in number than running all of them requires only a few seconds on the development machine.
+
+All of the test groups can be run from the one test suite file, so there is some automation in that this one file will run all of the tests.
+
+Were the project to grow in size and in the number of contributors, then automatic testing would be considered. The JsUnit framework includes files for integrating the test suite with continuous integration software.
+
+\subsection{Integration Testing}
+Integration testing has also not been used in this project. As the project's roadmap involves several modules working together, integration testing should be a vital tool for verifying the functional, reliability and performance metrics for the design.
+
+Its exclusion from the project in its early development stages are because there aren't a great quantity of modules in existence at this stage. It was decided that implementing integration testing facilities at this stage would be too time consuming with regards to the given deadline.
+
+It is expected that I\&T will be in place for the next iteration in order to ensure that the different modules are still working coherently. Coherence can be tested very quickly manually in the project's current stage by running the program. As the project grows it will no longer be a feasible, reliable test.
+
+\subsection{User Testing}
+As the designer section of the project is designed to be interactive, user\slash usability testing is a useful tool to discover how users use the system and to discover how to improve the efficiency, accuracy, recall of completing tasks and the emotional response of the users.
+
+As the project has not yet implemented many features and the amount of time which comprehensive testing would require, user testing has not been used in this project. It may, however, be used after more iterations, where greater value can be extracted from the investment in user testing.
+
+%\subsection{Stress Testing}
+
+%\subsection{Other types of testing}
+
+%\section{Integration Testing}
+
+%\section{User Testing}

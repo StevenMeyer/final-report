@@ -44,9 +44,9 @@ A scripted version of the Bootstrap components could not be located, and the sim
 \begin{alltt}inputcontrolgroup.error("Oh, snap!")\end{alltt}
 which would handle changing the class to use the in-built Bootstrap style and also add the text to the expected place. By extending the jQuery object, a developer could interact with the HTML in the same way in which they would in normal circumstances.
 
-While this development added some useful and powerful features to the UI, it was also time-consuming to create and perhaps should be broken out into a project in its own right. It did allow for tests using the existing JSunit framework and, as a result, a predictably scripted user interface.
+While this development added some useful and powerful features to the UI, it was also time-consuming to create and perhaps should be broken out into a project in its own right. It did allow for tests using the existing JsUnit framework and, as a result, a predictably scripted user interface.
 
 \subsubsection{File API}
-The decision to load and save directly from XML files on the host machine also created a substantial amount of work. This is due to Java\-Script engines' paranoia with regards to file-system access from within Java\-Script. These are security concerns relating to arbitrary file-system access from potentially malicious scripts over the internet. However, HTML5 introduced a File API which allows end-users to select files from their file-system with which a script can read from and, occasionally, write to.
+The decision to load and save directly from XML files on the host machine also created a substantial amount of work. This is due to Java\-Script engines' paranoia with regards to file-system access from within Java\-Script. These are security concerns relating to arbitrary file-system access from potentially malicious scripts over the internet. However, HTML5 introduced a File API which allows end-users to select files from their file-system with which a script can read from and, occasionally, write to files.
 
 The File Writer API was briefly examined and appears to have volatile support in view of its security implications. Writing to files did not fit into the final iteration, however.

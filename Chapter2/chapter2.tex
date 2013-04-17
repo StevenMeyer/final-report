@@ -42,7 +42,7 @@ The first implementation of the software was written in XSLT and JavaScript --- 
 
 The tests for the TDD process where created using unit testing frameworks for the programming language being used. For the initial development iteration being integrated with WWW SQL Designer, the XSLT style-sheets were tested by creating unit tests to be used with XSLTunit. This framework used XSLT documents as tests applied on the XSLT document to be tested in order to produce results as XML. The transformations are initiated by a web page using Java\-Script, but the tests could be carried using any engine which can apply XSL transforms.
 
-The Coffee\-Script was tested using JSunit, running the tests on the Java\-Script produced by compiling the Coffee\-Script into Java\-Script. JSunit tests are composed in Java\-Script and the tests are run and aggregated by an HTML web page which displays the results and gives details of the errors.
+The Coffee\-Script was tested using JsUnit, running the tests on the Java\-Script produced by compiling the Coffee\-Script into Java\-Script. JsUnit tests are composed in Java\-Script and the tests are run and aggregated by an HTML web page which displays the results and gives details of the errors.
 
 Continuous Integration suites were not used due to the size of the project and the effort required to integrate a CI suite. The benefits which using such a suite would have brought to the project were emulated to some extent by running the suite of tests whenever the code-base was altered and when new tests were created. This ensured that modifications and new code did not affect the working state of other code in the project.
 
