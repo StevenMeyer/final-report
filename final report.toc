@@ -43,13 +43,18 @@
 \contentsline {subsection}{\numberline {5.2.2}Integration Testing}{18}
 \contentsline {subsection}{\numberline {5.2.3}User Testing}{18}
 \contentsline {chapter}{\numberline {6}Evaluation}{19}
-\contentsline {chapter}{Appendices}{20}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{21}
-\contentsline {section}{\numberline {1.1}jQuery}{21}
-\contentsline {section}{\numberline {1.2}Modernizr}{21}
-\contentsline {section}{\numberline {1.3}Twitter Bootstrap}{21}
-\contentsline {section}{\numberline {1.4}JsUnit}{22}
-\contentsline {section}{\numberline {1.5}H5BP --- HTML5 Boilerplate}{23}
-\contentsline {chapter}{\numberline {B}Code samples}{24}
-\contentsline {section}{\numberline {2.1}Random Number Generator}{24}
-\contentsline {chapter}{Annotated Bibliography}{27}
+\contentsline {section}{\numberline {6.1}Scope \& Design Decisions}{19}
+\contentsline {section}{\numberline {6.2}Requirements}{19}
+\contentsline {section}{\numberline {6.3}Tools}{19}
+\contentsline {section}{\numberline {6.4}Goals \& Expectations}{20}
+\contentsline {section}{\numberline {6.5}Let's Do It This Way, Next Time}{20}
+\contentsline {chapter}{Appendices}{21}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{22}
+\contentsline {section}{\numberline {1.1}jQuery}{22}
+\contentsline {section}{\numberline {1.2}Modernizr}{22}
+\contentsline {section}{\numberline {1.3}Twitter Bootstrap}{22}
+\contentsline {section}{\numberline {1.4}JsUnit}{23}
+\contentsline {section}{\numberline {1.5}H5BP --- HTML5 Boilerplate}{24}
+\contentsline {chapter}{\numberline {B}Code samples}{25}
+\contentsline {section}{\numberline {2.1}Random Number Generator}{25}
+\contentsline {chapter}{Annotated Bibliography}{28}

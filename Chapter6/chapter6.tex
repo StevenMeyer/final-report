@@ -1,14 +1,48 @@
-\chapter{Evaluation}
+\cleardoublepage
+\chapter{Evaluation}% 802 words
+\section{Scope \& Design Decisions}
+The scope of the project, initially, would have been sufficient to have lead to the creation of a software which fulfilled all of the goals set out for the time-frame. Had the WWW SQL Designer project been simpler to understand in its libraries, then all of the diagram functionality would have already been in place.
 
-Examiners expect to find in your dissertation a section addressing such questions as:
+The decision to create a new diagramming software instead of learning the in-house library was the correct one. While learning the library may have been less time consuming in the long run, by switching to a better known library, jQuery, this ensures that future engineers will be able to work more efficiently with the project.
 
-\begin{itemize}
-   \item Were the requirements correctly identified? 
-   \item Were the design decisions correct?
-   \item Could a more suitable set of tools have been chosen?
-   \item How well did the software meet the needs of those who were expecting to use it?
-   \item How well were any other project aims achieved?
-   \item If you were starting again, what would you do differently?
-\end{itemize}
+Creating a new library for the front-end elements may not have been a sensible decision with regards to the time allocated, but it does feel like a sensible decision with regards to the long-term development of this project. The repetitive nature of these elements would mean that the agile development process would have called for it in the very near future. It was the repetitive nature which prompted its creation, here.
 
-Such material is regarded as an important part of the dissertation; it should demonstrate that you are capable not only of carrying out a piece of work but also of thinking critically about how you did it and how you might have done it better. This is seen as an important part of an honours degree. There will be good things and room for improvement with any project. As you write this section, identify and discuss the parts of the work that went well and also consider ways in which the work could be improved. The critical evaluation can sometimes be the weakest aspect of most project dissertations. We will discuss this in a future lecture and there are some additional points raised on the project website. 
+The object which the library has created are very powerful and useful objects. There are some issues with them, but these should be easily resolvable. It should be noted that the library, like the rest of the project, is far from complete.
+
+\section{Requirements}
+The requirements for the project were effectively a summary of the elements which make up a Propel schema. This schema is reasonably well defined in its documentation and so, too, the requirements for this project were well defined.
+
+However, when these requirements were extended or adapted for the new front-end, they were not so well defined. As a result of the project stemming from the developer's own needs, they were perhaps too focussed on that person's own expectations and so were less well planned and as comprehensive as they should have been.
+
+\section{Tools}
+The Netbeans IDE has been an indispensable tool in the making of this project. The most recent version at the time of writing (7.3 RC) has all of the facilities expected from an IDE for Java\-Script and HTML5. However, most of the Java\-Script created by this project was generated from Coffee\-Script, which the Netbeans IDE supports only by means of a plug-in. This plug-in is missing syntax highlighting, but is otherwise useful for detecting mistakes and for compiling the Coffee\-Script.
+
+The IDE also has an integrated git version control client, but the Windows client from GitHub provides a more user-friendly interface and satisfying experience.
+
+The new HTML5 additions to the Release Candidate also include Java\-Script debugging and page inspection. However, these were not very easy to use. The developer tools integrated with Google Chrome and in the Firebug extension for Mozilla Firefox were much better tools.
+
+In all, the varied tool-set provided a suitable development environment, and did not hinder progress at any stage of the process.
+
+\section{Goals \& Expectations}
+The project is not at a stage where it would be a useful tool for anyone and, for this reason, has not been released for anyone to use. However, the software is mainly a personal project and, in this capacity, I feel that the project is heading in the right directions and will, in a few more iterations, deliver the value which it was designed to.
+
+The project is currently delivering on its extra goals of being portable and of using only free and open standards. It is composed entirely of HTML5, Java\-Script and CSS. This technology is already available on most platforms, so the software can be run on most platforms. The software also does not need to be installed in order to run. HTML5, JS and CSS are free and open with many free and open-source engines available on which to run them.
+
+The remaining goals are either longer-term design points (eg.\ more Propel integration and inheritance support) or goals which will be achieved when the software in in a usable --- though not necessarily complete --- state: being free, open-source software. When there is a more substantial starting point, the GitHub project will be made public and other developers will be encouraged to get involved to continue its development.
+
+\section{Let's Do It This Way, Next Time}
+As creating a library for Twitter Bootstrap was a major time sink, it may have been more efficient to use a front-end library which already exists, such as jQueryUI. This library achieves the same goals as the library created here, but using its own HTML elements, as opposed to Twitter Bootstrap components.
+
+Bringing more developers on board earlier on, such as open-sourcing from the very beginning, is certainly a decision which may have lead to quicker development. However, due to the project's late start, gathering support and developers was considered a less efficient use of time than starting the project with a single developer.
+%Examiners expect to find in your dissertation a section addressing such questions as:
+
+%\begin{itemize}
+%   \item Were the requirements correctly identified? 
+%   \item Were the design decisions correct?
+%   \item Could a more suitable set of tools have been chosen?
+%   \item How well did the software meet the needs of those who were expecting to use it?
+%   \item How well were any other project aims achieved?
+%   \item If you were starting again, what would you do differently?
+%\end{itemize}
+
+%Such material is regarded as an important part of the dissertation; it should demonstrate that you are capable not only of carrying out a piece of work but also of thinking critically about how you did it and how you might have done it better. This is seen as an important part of an honours degree. %There will be good things and room for improvement with any project. As you write this section, identify and discuss the parts of the work that went well and also consider ways in which the work could be improved. %The critical evaluation can sometimes be the weakest aspect of most project dissertations. We will discuss this in a future lecture and there are some additional points raised on the project website. 
