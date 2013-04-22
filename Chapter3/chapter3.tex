@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Design}% 2559 words
+\chapter{Design}% 2647 words
 
 
 
@@ -54,6 +54,10 @@ It was decided that all Java\-Script objects would follow these rules:
 Functions in Coffee\-Script are defined by the means of
 \begin{alltt}variable = (param1, param2, \ldots, param\slshape{n}\upshape) -> function here\end{alltt}
 Where a function has no specified parameters, it is permitted in Coffee\-Script to omit the brackets and start the function with the arrow (\texttt{->}). However, it was decided that functions without specified parameters would always include the empty brackets in order to clarify that the function is intended to have no parameters. It also serves an \ae{}sthetic function, causing it to become easier to identify functions.
+
+Those variables in Coffee\-Script which hold jQuery objects are prefixed with the \$ symbol to differentiate them from references to non-jQuery variables. This was introduced part-way through the project when it became necessary to easily separate variables which reference jQuery objects. Because of this, there may be some earlier code which does not exhibit this coding style.
+
+Functions, methods and variables were always to be defined in alphabetical order to make them easier to locate. This style could be contravened where the ordering was dictated by the code.
 
 \section{Model}\label{sec:DesignModel}
 \subsection{Structure}

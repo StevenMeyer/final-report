@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Implementation} % 1750 words
+\chapter{Implementation} % 2299 words
 
 %The implementation should look at any issues you encountered as you tried to implement your design. During the work, you might have found that elements of your design were unnecessary or overly complex, perhaps third party libraries were available that simplified some of the functions that you intended to implement. If things were easier in some areas, then how did you adapt your project to take account of your findings?
 
@@ -44,6 +44,45 @@ As discussed with regards to Coffee\-Script, jQuery does not use classical OOP. 
 
 This was to be overcome by adding a function with the same name to the object (instance), instead. This is less efficient than using a prototype or extending jQuery as every instance maintains its own \texttt{this.append()} function. However, the functions attached to \texttt{this} are executed instead of the jQuery function.
 
+\subsection{View jQuery Plug-in}
+The SVG was manipulated by means of a jQuery plug-in created for this project. The plug-in itself was trivial to create. The interaction with the SVG, however, was an eventful experiment which eventually achieved a well worked solution.
+
+One of the major problem areas with the SVG manipulation came in the form of Internet Explorer. Continuing in a long tradition of doing so, Internet Explorer occasionally implements W3C specifications differently from the implementations of other browser platforms. It was not uncommon to implement a task and test it to work using a different browser and also to have the associated unit tests pass also (the tests were run using a different browser), only to try running the acceptance tests using Internet Explorer to find that the feature did not work at all. This was particularly prevalent when attempting to work with classes in the DOM.
+
+A great deal of time and effort was invested in created a method for updating the visual appearance of SVG element when a new element was added or an existing element was altered. For example, adding a new column to a table should enlarge the column area of the table element, potentially shift other column entities down (for insertion into the middle) and enlarge the table's containing box. In exploring solutions to this the execution would frequently become stuck in infinite redrawing loops. In order to redraw in this hierarchical manner, functions had to be created which would bubble redraw events upward from the innermost element to be redrawn to the outermost. The clever use of multiple internal SVG elements meant that elements did not need to be programmatically redrawn when they were moved; the SVG specification is responsible for doing that.
+
+The dragging of tables also caused a few investigations as it was required to explore different methods for implementing it. The main cause of issues was the choice of reference points used to calculate the distance which the mouse had moved between events, occasionally causing elements to move many time faster than the cursor which was controlling them.
+
+\subsection{XML}
+The XML conversion into and from the Java\-Script model is performed using a mixture of jQuery and Coffee\-Script. A utility class was created which contains the `static' function \texttt{buildFromXML()}. The complementary function does not yet exists as it has not been called for in any iteration.
+
+It used jQuery's \texttt{parseXML()} function to create a DOM which is traversable from Java\-Script. It then exploits jQuery's iterative \texttt{each()} function to iterate through child nodes and create Java\-Script model objects using the attributes and contents of these nodes. A more illustrative example would be the following abridged code snippet:
+\begin{alltt}
+class Builder
+  @buildFromXML = (xml) ->
+    build = (xml) ->
+      _xml = $ $.parseXML xml
+      $database = _xml.find "database:first"
+      dbName    = $database.attr "name"
+      idMethod  = $database.attr "defaultIdMethod"
+      database  = new Database dbName, idMethod
+      $database.children("table").each () ->
+        buildTable $(this), database
+      database
+
+    buildTable = ($table, database) ->
+      table = new Table $table.attr "name"
+      database.addTable table
+      $table.children("column").each () ->
+        buildColumn $(this), table
+      database
+
+    buildColumn = ($column, table) ->
+      \ldots
+
+    build xml
+\end{alltt}
+
 \subsection{Propel Inheritance}
 Determining a method by which to implement Propel's attribute inheritance from ancestor elements proved to be problematic as the inheritance direction is the opposite way around to that of the OO inheritance approach being used. A substantial amount of time was consumed in exploring this, and the outcome is described in the design section \ref{sec:DesignModel}. As the Propel software determines inherited values at compile-time (when compiling the schema to produce PHP objects and SQL), this software does not need to concern itself with the actual values, but whether an attribute is defined or inherited is still a concern.
 
@@ -64,6 +103,8 @@ Attempting to extend jQuery objects proved problematic as previously discussed. 
 A future release plan will combine the two approaches to allow for a jQuery plug-in interface which calls the Bootstrap objects prototype methods. This would be a more memory-efficient implementation and also provide for a more predictable flow of control.
 
 While the development of the library added some useful and powerful features to the UI, it was also time-consuming to create and perhaps should be broken out into a project in its own right. It did allow for tests using the existing JsUnit framework and, as a result, a predictably scripted user interface.
+
+The Coffee\-Script and Java\-Script containing the first, hacked version of the user interface is still present in the project file-system as parts of it are still in the process of being translated into the new, library-driven UI. This file contains the unimplemented Table user interface. There was not enough time in the release period to translate the table manipulation feature which had been present in this file. The Coffee\-Script is in main.coffee.
 
 \subsubsection{File API}
 The decision to load and save directly from XML files on the host machine also created a substantial amount of work. This is due to Java\-Script engines' paranoia with regards to file-system access from within Java\-Script. These are security concerns relating to arbitrary file-system access from potentially malicious scripts over the internet. However, HTML5 introduced a File API which allows end-users to select files from their file-system with which a script can read from and, occasionally, write to files.

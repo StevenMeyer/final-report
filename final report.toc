@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {3.5}View}{12}
 \contentsline {subsection}{\numberline {3.5.1}SVG}{12}
 \contentsline {subsection}{\numberline {3.5.2}HTML5 Canvas and HTML}{12}
-\contentsline {section}{\numberline {3.6}Controller and User Interface}{12}
+\contentsline {section}{\numberline {3.6}Controller and User Interface}{13}
 \contentsline {section}{\numberline {3.7}Other Technology}{13}
 \contentsline {subsection}{\numberline {3.7.1}Adobe Flash}{13}
 \contentsline {subsection}{\numberline {3.7.2}Microsoft Silverlight}{13}
@@ -38,36 +38,39 @@
 \contentsline {section}{\numberline {4.2}Propel Designer}{16}
 \contentsline {subsection}{\numberline {4.2.1}CoffeeScript}{16}
 \contentsline {subsection}{\numberline {4.2.2}jQuery and SVG}{16}
-\contentsline {subsection}{\numberline {4.2.3}Propel Inheritance}{17}
-\contentsline {subsection}{\numberline {4.2.4}The User Interface}{17}
-\contentsline {subsubsection}{\numberline {4.2.4.1}Twitter Bootstrap}{17}
-\contentsline {subsubsection}{\numberline {4.2.4.2}File API}{18}
-\contentsline {chapter}{\numberline {5}Testing}{19}
-\contentsline {section}{\numberline {5.1}Overall Approach to Testing}{19}
-\contentsline {subsection}{\numberline {5.1.1}Unit Tests}{19}
-\contentsline {subsection}{\numberline {5.1.2}Acceptance Tests}{19}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Model Testing}{20}
-\contentsline {subsubsection}{\numberline {5.1.2.2}User Interface Testing}{20}
-\contentsline {section}{\numberline {5.2}Other Testing Methods}{20}
-\contentsline {subsection}{\numberline {5.2.1}Automated Testing}{20}
-\contentsline {subsection}{\numberline {5.2.2}Integration Testing}{21}
-\contentsline {subsection}{\numberline {5.2.3}User Testing}{21}
-\contentsline {subsection}{\numberline {5.2.4}Stress Testing}{21}
-\contentsline {chapter}{\numberline {6}Evaluation}{23}
-\contentsline {section}{\numberline {6.1}Scope \& Design Decisions}{23}
-\contentsline {section}{\numberline {6.2}Requirements}{23}
-\contentsline {subsection}{\numberline {6.2.1}Process Methodology}{24}
-\contentsline {section}{\numberline {6.3}Tools}{24}
-\contentsline {section}{\numberline {6.4}Goals \& Expectations}{24}
-\contentsline {section}{\numberline {6.5}Reflection}{25}
-\contentsline {chapter}{Appendices}{27}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{28}
-\contentsline {section}{\numberline {1.1}jQuery}{28}
-\contentsline {section}{\numberline {1.2}Modernizr}{28}
-\contentsline {section}{\numberline {1.3}Twitter Bootstrap}{28}
-\contentsline {section}{\numberline {1.4}JsUnit}{29}
-\contentsline {section}{\numberline {1.5}H5BP --- HTML5 Boilerplate}{30}
-\contentsline {chapter}{\numberline {B}Code samples}{31}
-\contentsline {section}{\numberline {2.1}CoffeeScript Class --- Table}{31}
-\contentsline {section}{\numberline {2.2}CoffeeScript Inheritance --- jQuery extension}{37}
-\contentsline {chapter}{Annotated Bibliography}{39}
+\contentsline {subsection}{\numberline {4.2.3}View jQuery Plug-in}{17}
+\contentsline {subsection}{\numberline {4.2.4}XML}{17}
+\contentsline {subsection}{\numberline {4.2.5}Propel Inheritance}{18}
+\contentsline {subsection}{\numberline {4.2.6}The User Interface}{18}
+\contentsline {subsubsection}{\numberline {4.2.6.1}Twitter Bootstrap}{18}
+\contentsline {subsubsection}{\numberline {4.2.6.2}File API}{19}
+\contentsline {chapter}{\numberline {5}Testing}{21}
+\contentsline {section}{\numberline {5.1}Overall Approach to Testing}{21}
+\contentsline {subsection}{\numberline {5.1.1}Unit Tests}{21}
+\contentsline {subsection}{\numberline {5.1.2}Acceptance Tests}{21}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Model Testing}{22}
+\contentsline {subsubsection}{\numberline {5.1.2.2}User Interface Testing}{22}
+\contentsline {section}{\numberline {5.2}Other Testing Methods}{22}
+\contentsline {subsection}{\numberline {5.2.1}Automated Testing}{22}
+\contentsline {subsection}{\numberline {5.2.2}Integration Testing}{23}
+\contentsline {subsection}{\numberline {5.2.3}User Testing}{23}
+\contentsline {subsection}{\numberline {5.2.4}Stress Testing}{23}
+\contentsline {chapter}{\numberline {6}Evaluation}{25}
+\contentsline {section}{\numberline {6.1}Scope \& Design Decisions}{25}
+\contentsline {section}{\numberline {6.2}Requirements}{25}
+\contentsline {subsection}{\numberline {6.2.1}Process Methodology}{26}
+\contentsline {section}{\numberline {6.3}Tools}{26}
+\contentsline {section}{\numberline {6.4}Goals \& Expectations}{26}
+\contentsline {section}{\numberline {6.5}Reflection}{27}
+\contentsline {section}{\numberline {6.6}Summary}{27}
+\contentsline {chapter}{Appendices}{29}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{30}
+\contentsline {section}{\numberline {1.1}jQuery}{30}
+\contentsline {section}{\numberline {1.2}Modernizr}{30}
+\contentsline {section}{\numberline {1.3}Twitter Bootstrap}{30}
+\contentsline {section}{\numberline {1.4}JsUnit}{31}
+\contentsline {section}{\numberline {1.5}H5BP --- HTML5 Boilerplate}{32}
+\contentsline {chapter}{\numberline {B}Code samples}{33}
+\contentsline {section}{\numberline {2.1}CoffeeScript Class --- Table}{33}
+\contentsline {section}{\numberline {2.2}CoffeeScript Inheritance --- jQuery extension}{39}
+\contentsline {chapter}{Annotated Bibliography}{41}
