@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Testing} % 756 words
+\chapter{Testing} % 1366 words
 
 %Detailed descriptions of every test case are definitely not what is required here. What is important is to show that you adopted a sensible strategy that was, in principle, capable of testing the system adequately even if you did not have the time to test the system fully.
 
@@ -11,8 +11,21 @@ This project was designed using a test-first design process. This process applie
 \subsection{Unit Tests}
 All of the tests in this project have been written in Java\-Script as JsUnit unit-style tests. This has come to be as a result of the extensive use of Coffee\-Script\slash Java\-Script throughout the project. As the software is programmed in Java\-Script, so the tests are written in Java\-Script.
 
+\subsection{Acceptance Tests}
+Acceptance tests were created from the users stories selected at each iteration. These tests involved a real user enacting that which was described in the user story. For the most part, this would involve using the user interface to add a table to the schema and observing that a table with the correct attributes (name) was present on the screen, or a similar test.
+
+Unit tests were present to check that such items were present in the DOM and visible, but this could only check that the test passed in a logical sense. The acceptance test would verify that the user could see the result, too, in an acceptable manner, rather than the unit test's assertion that it did exists somehow on the screen.
+
+Such tests, however, could not be automated as they involved a human observer and human judgement. It would have been convenient to have these tests automated, however, as they could have been included as part of the automated testing suite and identify any errors introduced as the project developed.
+
+In its current form, changes to the code base which effected the acceptance tests could only be detected by manually trying each acceptance test. This process was understandably slow, and prone to missing errors.
+
+However, learning how to use and implement a new testing suite for these user interface tests (which most of the acceptance tests were) was deemed to expensive with the limited time remaining after the project change for the small quantity of acceptance tests which it would have automated. At some point in the future, when there are more acceptance tests, then a suite will inevitably be required and the tests retroactively codified.
+
 \subsubsection{Model Testing}
 The unit tests came about as implementation checks for the tasks which, themselves, were a break-down of the design stories. In the nature of TDD, the tests would be written so that they would fail initially. The code was then created which would satisfy the test conditions. Although testing in this way can only prove that the implementation works as expected for the given test code, it is reasonable to expect that it works in the expected way for all cases.
+
+The tests all consisted of unit tests written in Java\-Script; the same programming language used to create the models (or, at least, the models in their compiled form). Unit tests were used extensively as the acceptance tests were mostly related to the user being able to perform tasks with the user interface, which would be interacting with the model. Having the model extensively tested with unit tests allowed for the assumption that acceptance tests on the UI would be adequate validity indicators.
 
 Formal methods could have been used to completely verify and validate the design and the code, but such an undertaking would have required considerable time and effort and, as such, was not deemed appropriate for this project; unit testing provides adequate reassurance.
 
@@ -20,6 +33,8 @@ Formal methods could have been used to completely verify and validate the design
 Rather than using a dedicated UI testing framework, the JsUnit framework was also used to test the UI. This was deemed an adequate testing solution as the UI was constructed from jQuery objects and the Twitter Bootstrap library. As the Bootstrap library was built, so unit tests had been created to validate the code. Bespoke components created from these library objects were also unit tested and so this gave reasonable assurance that the UI component would be created in a predictable manner.
 
 In this way, it was possible to build the front-end without a user interface testing framework. Unit testing could not verify attributes such as the positioning of element in the web page, but the Twitter Bootstrap has extensively tested positioning and layout properties built in, so these were not a concern for this project. The style, layout and positioning of Twitter Bootstrap components is predictable and consistent.
+
+Acceptance tests were bases around the black-box testing of the User Interface. These tests verified that the user could fulfil the stories and made it possible to say with confidence that the story had been completed, and also that the user interface was as complete as required by that same story.
 
 \section{Other Testing Methods}
 
@@ -37,12 +52,19 @@ Integration testing has also not been used in this project. As the project's roa
 
 Its exclusion from the project in its early development stages are because there aren't a great quantity of modules in existence at this stage. It was decided that implementing integration testing facilities at this stage would be too time consuming with regards to the given deadline.
 
+The combination of error-free unit tests and a selection of acceptance tests which are also without errors gives reasonable assurance that the few existing parts of the software are working and are working together insofar as these few modules aren't conflicting. This is only a reasonable assumption while the project is so small.
+
 It is expected that I\&T will be in place for the next iteration in order to ensure that the different modules are still working coherently. Coherence can be tested very quickly manually in the project's current stage by running the program. As the project grows it will no longer be a feasible, reliable test.
 
 \subsection{User Testing}
 As the designer section of the project is designed to be interactive, user\slash usability testing is a useful tool to discover how users use the system and to discover how to improve the efficiency, accuracy, recall of completing tasks and the emotional response of the users.
 
 As the project has not yet implemented many features and the amount of time which comprehensive testing would require, user testing has not been used in this project. It may, however, be used after more iterations, where greater value can be extracted from the investment in user testing.
+
+\subsection{Stress Testing}
+As the software is designed to be a single-user program and not expected to handle vast quantities of data, stress testing has not been used with this project. Using the program with the small test schema feels responsive on the developer's own machine and the time required to load the schema and the load on the CPU is minimal.
+
+Perhaps it would be prudent to test the software with a very large schema to observe how it handles large amounts of data, but it could be argued that such a large database should be considered for splitting up into smaller schemata. Of course, the software does not yet handle imported schemata to form an aggregated schema. Such stress testing may be included in the project in the future, particularly when it handles more data per table than it does in its current, early incarnation.
 
 %\subsection{Stress Testing}
 

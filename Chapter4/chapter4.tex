@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Implementation} % 1266 words
+\chapter{Implementation} % 1750 words
 
 %The implementation should look at any issues you encountered as you tried to implement your design. During the work, you might have found that elements of your design were unnecessary or overly complex, perhaps third party libraries were available that simplified some of the functions that you intended to implement. If things were easier in some areas, then how did you adapt your project to take account of your findings?
 
@@ -22,20 +22,35 @@ A post on the Google Code mini-site for the project suggested that the WWW SQL D
 
 It was this difficulty and the previously discussed post which prompted the decision to abandon the WWW SQL Designer project and create a new system from the ground up using more popular frameworks and libraries. The move would allow the designer to be built with Propel in mind and to address other issues with \v{Z}\'{a}ra's project, such as the ability to save the schema as an image.
 
-\section{Propel Designer}
+\section{Propel Designer}\label{sec:PropelDesigner}
 \subsection{CoffeeScript}
 CoffeeScript was a new programming language for the developer and, as a result, had to be learnt in order that it would be usable. However, as the body of the code is either Java\-Script or code which compiles 1:1 into Java\-Script, the learning curve is minimised greatly. There were occasions where the language was so different that the code had to be prototyped in the Coffee\-Script real-time compiler on the Coffee\-Script website in order to discover exactly how to structure the required Java\-Script code as Coffee\-Script.
+
+Coffee\-Script includes mechanisms to simplify OO programming and inheritance in Java\-Script. The ability to set out a `class' in Coffee\-Script in a similar way as one would in a language such as Java was very useful, as traditional OO languages such as Java were much better understood.
+
+Classical OOP in Java\-Script is somewhat convoluted and its complexity often leaves it shunned for simpler patterns such as the prototypical Module pattern using functions and closures. Indeed, many libraries including jQuery use a prototypical \texttt{extend()} mechanism to emulate inheritance.
+
+Having `true' inheritance automatically applied by Coffee\-Script brought all of the benefits of OOP to the project including 
+polymorphism.
 
 \subsection{jQuery and SVG}
 jQuery was the library of choice for interacting with the DOM. This included the DOM fragment which was the SVG used for the view. jQuery is designed for the HTML DOM specifically, and this raised a few problems with the slightly different DOM of the SVG specification. These were mainly problems relating to jQuery's class methods as SVG elements maintain their classes differently to HTML elements. There are also some jQuery functions which do not exhibit the same behaviour with XML (and, by extension, SVG) as they do HTML. These were overcome by using workaround such as getting the ClassList property and performing standard Java\-Script string functions upon it to imitate jQuery's class functions.
 
-There exists some jQuery plugins to address the issues with SVG, but these require a custom version of the jQuery library in order to make the plug-ins usable and so it was decided that the work-arounds were a better compromise than a modified library, which may not be as up-to-date as recent trunk libraries.
+There exists jQuery plugins to address the issues with SVG, but these require a custom version of the jQuery library in order to make the plug-ins usable and so it was decided that the work-arounds were a better compromise than a modified library, which may not be as up-to-date as the official libraries.
+
+jQuery proved problematic with the production of the Bootstrap library. Functions which were desirable to override, such as \texttt{append()}, could not be overridden using the prototype as would be the case with OO programming. This was due to the way in which jQuery functions are applied.
+
+As discussed with regards to Coffee\-Script, jQuery does not use classical OOP. jQuery functions are instead called like a prototypical function, such as \texttt{\$.append(content[,content])}, but this function does not exist in the object's prototype. It instead calls a function, \texttt{\$.fn.append()}. This means that attempting to override this function by adding a function with the same name to the extending object's prototype still results in the jQuery function being called.
+
+This was to be overcome by adding a function with the same name to the object (instance), instead. This is less efficient than using a prototype or extending jQuery as every instance maintains its own \texttt{this.append()} function. However, the functions attached to \texttt{this} are executed instead of the jQuery function.
 
 \subsection{Propel Inheritance}
 Determining a method by which to implement Propel's attribute inheritance from ancestor elements proved to be problematic as the inheritance direction is the opposite way around to that of the OO inheritance approach being used. A substantial amount of time was consumed in exploring this, and the outcome is described in the design section \ref{sec:DesignModel}. As the Propel software determines inherited values at compile-time (when compiling the schema to produce PHP objects and SQL), this software does not need to concern itself with the actual values, but whether an attribute is defined or inherited is still a concern.
 
+Methods to have the actual value of inherited values calculated during run-time were considered, but this was a case of over-thinking that which was actually required. Some time was lost to this and it was certainly not an XP process.
+
 \subsection{The User Interface}
-\subsubsection{Bootstrap}
+\subsubsection{Twitter Bootstrap}
 When building the UI from snippets of jQuery and Java\-Script, it was found that there was a considerable amount of repetition and duplication and should have required additional testing frameworks. Using the Twitter Bootstrap had saved a considerable amount of work with regard to style, but simple tasks such as alerts and changing styles where the cause of much duplication and causing the code to become difficult to read.
 
 The UI, in its first incarnation, was mainly hacked together to display the correct buttons, dialogues and inputs. This approach quickly caused the code quality to deteriorate, introduced bugs and duplication and was ultimately unreliable and not testable.
@@ -44,9 +59,15 @@ A scripted version of the Bootstrap components could not be located, and the sim
 \begin{alltt}inputcontrolgroup.error("Oh, snap!")\end{alltt}
 which would handle changing the class to use the in-built Bootstrap style and also add the text to the expected place. By extending the jQuery object, a developer could interact with the HTML in the same way in which they would in normal circumstances.
 
-While this development added some useful and powerful features to the UI, it was also time-consuming to create and perhaps should be broken out into a project in its own right. It did allow for tests using the existing JsUnit framework and, as a result, a predictably scripted user interface.
+Attempting to extend jQuery objects proved problematic as previously discussed. The library is not classically object oriented. This is why it is recommended to create jQuery plug-in to extend jQuery's functionality, rather than to extend jQuery objects. As the objects were mainly created to reduced duplicated HTML and jQuery function calls, a plug-in was not suitable as plug-ins interact with existing jQuery objects; the Bootstrap library creates them.
+
+A future release plan will combine the two approaches to allow for a jQuery plug-in interface which calls the Bootstrap objects prototype methods. This would be a more memory-efficient implementation and also provide for a more predictable flow of control.
+
+While the development of the library added some useful and powerful features to the UI, it was also time-consuming to create and perhaps should be broken out into a project in its own right. It did allow for tests using the existing JsUnit framework and, as a result, a predictably scripted user interface.
 
 \subsubsection{File API}
 The decision to load and save directly from XML files on the host machine also created a substantial amount of work. This is due to Java\-Script engines' paranoia with regards to file-system access from within Java\-Script. These are security concerns relating to arbitrary file-system access from potentially malicious scripts over the internet. However, HTML5 introduced a File API which allows end-users to select files from their file-system with which a script can read from and, occasionally, write to files.
+
+The File Reader API is a mostly event-driven interface. This initially caused some problems as it shared the XML loading code with the mechanism for loading XML from a text input, which is sequential. Refactoring the code to allow for asynchronous loading of XML was trivial, however, and did not upset the project's velocity.
 
 The File Writer API was briefly examined and appears to have volatile support in view of its security implications. Writing to files did not fit into the final iteration, however.

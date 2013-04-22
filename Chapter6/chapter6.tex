@@ -1,18 +1,27 @@
 \cleardoublepage
-\chapter{Evaluation}% 802 words
+\chapter{Evaluation}% 1244 words
 \section{Scope \& Design Decisions}
-The scope of the project, initially, would have been sufficient to have lead to the creation of a software which fulfilled all of the goals set out for the time-frame. Had the WWW SQL Designer project been simpler to understand in its libraries, then all of the diagram functionality would have already been in place.
+The scope of the project, initially, would have been sufficient to have lead to the creation of a software which fulfilled all of the goals set out for the time-frame. Had the WWW SQL Designer project been simpler to understand in its libraries, then all of the diagram functionality would have already been in place, and would only have required extending to support Propel attributes.
 
-The decision to create a new diagramming software instead of learning the in-house library was the correct one. While learning the library may have been less time consuming in the long run, by switching to a better known library, jQuery, this ensures that future engineers will be able to work more efficiently with the project.
+The decision to create a new diagramming software instead of learning and modifying the in-house library was the correct one. While learning the library may have been less time consuming in the long run, by switching to a better known library, jQuery, this ensures that future engineers will be able to work more efficiently with the project.
+
+Creating the diagramming software from the ground up also allows the software to be built around Propel and also to address the issues with the WWW SQL Designer project such as the lack of composite keys, printing and drag-and-drop from the outset, rather than trying to retrofit them into an existing system.
 
 Creating a new library for the front-end elements may not have been a sensible decision with regards to the time allocated, but it does feel like a sensible decision with regards to the long-term development of this project. The repetitive nature of these elements would mean that the agile development process would have called for it in the very near future. It was the repetitive nature which prompted its creation, here.
 
-The object which the library has created are very powerful and useful objects. There are some issues with them, but these should be easily resolvable. It should be noted that the library, like the rest of the project, is far from complete.
+The classes which the library has created are very powerful and useful. There are some issues with them as discussed in the Implementation chapter (\ref{sec:PropelDesigner}), but these should be easily resolvable. It should be noted that the library, like the rest of the project, is far from complete.
 
 \section{Requirements}
 The requirements for the project were effectively a summary of the elements which make up a Propel schema. This schema is reasonably well defined in its documentation and so, too, the requirements for this project were well defined.
 
 However, when these requirements were extended or adapted for the new front-end, they were not so well defined. As a result of the project stemming from the developer's own needs, they were perhaps too focussed on that person's own expectations and so were less well planned and as comprehensive as they should have been.
+
+\subsection{Process Methodology}
+As the definitions of the Propel schema were already comprehensively described in Propel's own documentation and as the functions of a ER modeller are already fairly well established, it could be argued that extreme programming may not have been the best process methodology.
+
+XP is better applied to cases of emergent design and where change is expected to be frequent. The almost static nature of the rules and the slow change cycles of Propel give weight to the argument that a less extreme agile approach or even a spiral-style life-cycle could be more appropriate.
+
+However, it was the case that change still occurred frequently in this project, such as with the abandoning of the existing system and in creating a UI library. In this respect, an agile approach in which the requirements and time-scales could be changed inexpensively proved to be the best process.
 
 \section{Tools}
 The Netbeans IDE has been an indispensable tool in the making of this project. The most recent version at the time of writing (7.3 RC) has all of the facilities expected from an IDE for Java\-Script and HTML5. However, most of the Java\-Script created by this project was generated from Coffee\-Script, which the Netbeans IDE supports only by means of a plug-in. This plug-in is missing syntax highlighting, but is otherwise useful for detecting mistakes and for compiling the Coffee\-Script.
@@ -21,16 +30,24 @@ The IDE also has an integrated git version control client, but the Windows clien
 
 The new HTML5 additions to the Release Candidate also include Java\-Script debugging and page inspection. However, these were not very easy to use. The developer tools integrated with Google Chrome and in the Firebug extension for Mozilla Firefox were much better tools.
 
+The JavaScript unit testing framework, JsUnit, is and has been for some time an abandoned project. The team which was responsible for its development have moved on to a different JavaScript unit testing framework. However, the tool is still adept at testing JavaScript and presents it results in a useful way. The project did not try to use any of its integration facilities with automated regression testing suites.
+
+It may be prudent to move the tests over to a framework which still enjoys active support, but as JsUnit has no issues, yet, this is not a major concern.
+
 In all, the varied tool-set provided a suitable development environment, and did not hinder progress at any stage of the process.
 
 \section{Goals \& Expectations}
 The project is not at a stage where it would be a useful tool for anyone and, for this reason, has not been released for anyone to use. However, the software is mainly a personal project and, in this capacity, I feel that the project is heading in the right directions and will, in a few more iterations, deliver the value which it was designed to.
 
+The fact that there is so little useful functionality would suggest that, perhaps, the project was too ambitious to have been attempted within the time-frame. However, the project's initial goals were visualised at a time when the project was expected to extend the functionality of an existing open-source project. In this respect, the goals were entirely reasonable.
+
+The expectations were also over-estimated. The amount of time which would be available for the project and also the amount of useful effort which could be afforded to the project were optimistic. In spite of this, the work which was completed was performed to a high standard and the project has created a solid foundation upon which to continue developing the software and create a useful software development tool and a powerful UI library.
+
 The project is currently delivering on its extra goals of being portable and of using only free and open standards. It is composed entirely of HTML5, Java\-Script and CSS. This technology is already available on most platforms, so the software can be run on most platforms. The software also does not need to be installed in order to run. HTML5, JS and CSS are free and open with many free and open-source engines available on which to run them.
 
 The remaining goals are either longer-term design points (eg.\ more Propel integration and inheritance support) or goals which will be achieved when the software in in a usable --- though not necessarily complete --- state: being free, open-source software. When there is a more substantial starting point, the GitHub project will be made public and other developers will be encouraged to get involved to continue its development.
 
-\section{Let's Do It This Way, Next Time}
+\section{Reflection}
 As creating a library for Twitter Bootstrap was a major time sink, it may have been more efficient to use a front-end library which already exists, such as jQueryUI. This library achieves the same goals as the library created here, but using its own HTML elements, as opposed to Twitter Bootstrap components.
 
 Bringing more developers on board earlier on, such as open-sourcing from the very beginning, is certainly a decision which may have lead to quicker development. However, due to the project's late start, gathering support and developers was considered a less efficient use of time than starting the project with a single developer.

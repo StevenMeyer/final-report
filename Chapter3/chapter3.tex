@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Design}% 2372 words
+\chapter{Design}% 2559 words
 
 
 
@@ -31,7 +31,7 @@ A story would describe a design so broad as ``As a user, I need to add tables to
 
 Following the principles of test-driven development, these tasks were used to create a black-box style test. Id est an expected outcome would be described and the test was considered satisfied provided that it passes, regardless of how the code accomplished the task. For example, a test would expect the outcome that the SVG has a new \emph{rect} (rectangle) element of the class `rect' after adding a table; how that came to be was not significant.
 
-\section{Coding Standards}
+\section{Coding Style}\label{sec:CodingStandards}
 \subsection{OOP and JavaScript}
 The model was designed to be entirely object-oriented. Java\-Script is not a class-based language as Java is and, unlike most OO languages, has a variety of patterns for supporting OO programming styles.
 
@@ -56,12 +56,21 @@ Functions in Coffee\-Script are defined by the means of
 Where a function has no specified parameters, it is permitted in Coffee\-Script to omit the brackets and start the function with the arrow (\texttt{->}). However, it was decided that functions without specified parameters would always include the empty brackets in order to clarify that the function is intended to have no parameters. It also serves an \ae{}sthetic function, causing it to become easier to identify functions.
 
 \section{Model}\label{sec:DesignModel}
+\subsection{Structure}
 The model was designed to closely model the Propel schema reference. The structure of the XML schema document was to be represented in the model. As and when the agile method required them, this lead to the creation of 6 objects: Database, Table, Column, Foreign Key, Index and Unique Index. Foreign Key, Index and Unique Index were consigned to iterations beyond the time-frame available to the project as modelling tables and columns were deemed to deliver the greatest value.
 
 The schema hierarchy has columns contained within tables, which, in turn, are contained within a database element. This becomes problematic when one considers that each element can inherit attributes from its container. As tables are referenced from the database in the model (Database ``has a'' Table), the table would require a reference to the database object for its values. This approach would have introduced tight coupling into the software which was rejected as bad practice. In order to flag those values which were to be inherited to differentiate them from those with their own values, a static-like variable was introduced to the models. Values which were to be inherited from the container were set thus:
 \begin{alltt}table.setPhpNamingMethod Table.INHERIT\end{alltt}
 As the output XML would not require the true value, the inheritance would not need to be resolved by the software.
 
+\subsection{Visibility}
+As discussed in the previous section (\ref{sec:CodingStandards}), Java\-Script objects were created using a mix of the pseudo-classical and the all-in-one constructor patterns. This decision was particularly relevant to the objects in the model, as their attributes could either be public or private. Choosing one of these visibilities would change the pattern required for their access.
+
+It was decided that attributes and collections would be private instance variables accessed by means of public get and set functions. This decision was made in the name of good practice. By mandating the use of these functions, any changes to the way in which attributes are get or set internally of the object would not require a change in the code which tries to get or set these attributes. As these functions are privileged, they follow the all-in-one constructor pattern.
+
+By having the attributes and collections as publicly accessible properties of the objects, the code would have been easier to read and shorter, but it was rejected for the reasons already given and also for the reason that it would expose the internal data types, which are also liable to change.
+
+\subsection{Programming Language}
 JavaScript was selected as the programming language of choice by the merit of its inclusion on most platforms, devices and web browsers. Such penetration could not be matched by any other language available; Java requires a JVM installed and native programs are inherently restricted to their native platform. It also ties in conveniently with the other technology in use for the view and controller --- that of HTML5 and SVG. All three are available together in most modern web browsers.
 
 \section{View}

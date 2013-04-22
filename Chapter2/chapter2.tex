@@ -1,6 +1,6 @@
 %\addcontentsline{toc}{chapter}{Development Process}
 \cleardoublepage
-\chapter{Development Process}% 942 words
+\chapter{Development Process}% 1321 words
 
 %You need to describe briefly the life cycle model that you used. Do not force your project into the waterfall model if it is better described by prototyping or some other evolutionary model. You do not need to write about all of the different process models that you are aware of. Focus on the process model that you have used. It is possible that you needed to adapt an existing process model to suit your project; clearly identify what you used and how you adapted it for your needs.
 
@@ -16,7 +16,7 @@
 
 % STILL NEED TO TALK ABOUT RELEASE PLANNING AND ITERATION PLANNING
 \section{Process Methodology}
-\subsection*{Selection}
+\subsection{Selection}
 A schema diagram consists of a few main parts: the tables; the columns; and relationships. These are hierarchical in nature --- tables have columns, columns have attributes and relationships depend on tables most significantly and then on columns. When viewed in this manner, it can be seen that an evolutionary process model can be used to develop the system.
 
 It was decided than an agile approach to development would be used. The developer was also the intended customer for this project, although the software would presumably be usable by others, so the developer team would be small and the customer dedicated, collaborative, and empowered. As the system is evolutionary in nature, the requirements can be detailed as and when they are required, rather than being described in their entirety from early in the project.
@@ -29,13 +29,32 @@ Once the development methodology had been chosen the high-level requirements sto
 
 When the original modelling tool was abandoned, these same high-level stories were re-usable in specifying the development of the new modelling tool after having their context altered to fit.
 
-\subsection*{Modification}
+\subsection{Modifications}
 Some XP components had to be modified to cater to the requirements of the project. As the project was being undertaken by a sole developer, the practice of pair programming could not be accomplished in the expected way. As pair programming is an essential device for detecting and correcting errors and code smells, it was adapted to have some impact with a sole developer: the code was inspected at a later date in order to identify issues which had been missed in the first instance.
 
 The YAGNI process was also relaxed slightly in order to accommodate for patterns for which it was clear would be required at a later date, but which would be prohibited by an XP purist as such action would be deemed superfluous in the instance in which it was being created. This decision was intended to reduce the amount (and cost) of refactoring which would be required when the XP process would eventually call for it.
 
-\subsection*{Requirements Specification}
+As this is a personal project there is no separate customer entity. This has its benefits in that the `customer' will always be available, on-site, knowledgeable and authoritative; essentially everything a good on-site customer should be.
+
+It also has its risks. As the customer is also the whole developer team, there is an introduced risk that the stories\slash requirements may not be recorded in the same or sufficient detail as if the stories were to be communicated to different people. In order to mitigate this risk, the requirements were shown to another person who was not involved in the project to ensure that the details were sufficient.
+
+\subsection{Requirements Specification}
 Stories were committed to story cards to be arranged on a board in the vicinity of the development environment, but for stories which had been broken down into detailed tasks were committed to tickets using Trac. This program allows for tickets to be assigned, have comments added, and ultimately closed as completed allowing the work-flow to be documented and visualised.
+
+\section{Planning}
+\subsection{Release Planning}
+For the iterative releases, stories describing similar functions were grouped together. These were loosely based around the different elements of the Propel schema: tables, rows and indices.
+
+It was known that in the time which remained after the original plan was abandoned that it should have been possible to complete one release iteration. This release would incorporate the stories relating to loading, manipulating and saving schemata containing tables and columns and was expected to complete in 8 weeks.
+
+This estimate was based upon the time which had been spent on the initial project, as this was the only planning experience available from which to plan. This release plan was better organised than the previous attempt, which had mostly descended into slightly-organised hacking.
+
+\subsection{Iteration Planning}
+As it was not yet known the velocity at which the project could sustainably operate, the tasks for the first release were divided up into 8 divisions of estimated equal work. While this is not how XP would divide up work, it was an exercise to discover just how much work could be undertaken in one day and in one week.
+
+This gave a better gauge by which to estimate subsequent iterations. Tasks had different weights with regards to the work involved and so iterations were not equal in time, but they eventually stabilised to provide a constant flow of work.
+
+Iterations were approximately one week long due to the small team involved, with tasks generally being possible to complete usually in one working day. These days were not in line with normal working days, as some days had to be committed to other task not related to the project.
 
 \section{Tools}
 The first implementation of the software was written in XSLT and JavaScript --- the same programming languages as the intended design tool, \mbox{WWW SQL Designer}. The final implementation which included a designer used JavaScript, scalar vector graphics (SVG), and HTML5. These programming languages were selected because of their ubiquitous support on all major platforms; all of these are available in most major web browsers. It was decided that the Java\-Script would be compiled from Coffee\-Script. This is mainly due to Coffee\-Script's standardised way of dealing with classes in Java\-Script and because the compiled Java\-Script is purportedly more readable than and executes as fast as or faster than equivalent JS written without Coffee\-Script and which is also pretty-printed and passes through JSLint without generating warnings (or errors).

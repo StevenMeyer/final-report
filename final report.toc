@@ -4,57 +4,69 @@
 \contentsline {section}{\numberline {1.3}Related Systems}{3}
 \contentsline {chapter}{\numberline {2}Development Process}{5}
 \contentsline {section}{\numberline {2.1}Process Methodology}{5}
-\contentsline {section}{\numberline {2.2}Tools}{6}
-\contentsline {chapter}{\numberline {3}Design}{7}
-\contentsline {section}{\numberline {3.1}Overall Architecture}{7}
-\contentsline {section}{\numberline {3.2}Stories}{7}
-\contentsline {section}{\numberline {3.3}Coding Standards}{8}
-\contentsline {subsection}{\numberline {3.3.1}OOP and JavaScript}{8}
-\contentsline {subsection}{\numberline {3.3.2}CoffeeScript}{8}
-\contentsline {section}{\numberline {3.4}Model}{9}
-\contentsline {section}{\numberline {3.5}View}{9}
-\contentsline {subsection}{\numberline {3.5.1}SVG}{9}
-\contentsline {subsection}{\numberline {3.5.2}HTML5 Canvas and HTML}{10}
-\contentsline {section}{\numberline {3.6}Controller and User Interface}{10}
-\contentsline {section}{\numberline {3.7}Other Technology}{11}
-\contentsline {subsection}{\numberline {3.7.1}Adobe Flash}{11}
-\contentsline {subsection}{\numberline {3.7.2}Microsoft Silverlight}{11}
-\contentsline {subsection}{\numberline {3.7.3}Java and JavaFX}{11}
-\contentsline {section}{\numberline {3.8}Other design decisions}{11}
-\contentsline {subsection}{\numberline {3.8.1}Boilerplate}{11}
-\contentsline {chapter}{\numberline {4}Implementation}{13}
-\contentsline {section}{\numberline {4.1}WWW SQL Designer}{13}
-\contentsline {subsection}{\numberline {4.1.1}XSLT}{13}
-\contentsline {subsection}{\numberline {4.1.2}oz.js Library}{13}
-\contentsline {section}{\numberline {4.2}Propel Designer}{14}
-\contentsline {subsection}{\numberline {4.2.1}CoffeeScript}{14}
-\contentsline {subsection}{\numberline {4.2.2}jQuery and SVG}{14}
-\contentsline {subsection}{\numberline {4.2.3}Propel Inheritance}{14}
-\contentsline {subsection}{\numberline {4.2.4}The User Interface}{15}
-\contentsline {subsubsection}{\numberline {4.2.4.1}Bootstrap}{15}
-\contentsline {subsubsection}{\numberline {4.2.4.2}File API}{15}
-\contentsline {chapter}{\numberline {5}Testing}{17}
-\contentsline {section}{\numberline {5.1}Overall Approach to Testing}{17}
-\contentsline {subsection}{\numberline {5.1.1}Unit Tests}{17}
-\contentsline {subsubsection}{\numberline {5.1.1.1}Model Testing}{17}
-\contentsline {subsubsection}{\numberline {5.1.1.2}User Interface Testing}{17}
-\contentsline {section}{\numberline {5.2}Other Testing Methods}{18}
-\contentsline {subsection}{\numberline {5.2.1}Automated Testing}{18}
-\contentsline {subsection}{\numberline {5.2.2}Integration Testing}{18}
-\contentsline {subsection}{\numberline {5.2.3}User Testing}{18}
-\contentsline {chapter}{\numberline {6}Evaluation}{19}
-\contentsline {section}{\numberline {6.1}Scope \& Design Decisions}{19}
-\contentsline {section}{\numberline {6.2}Requirements}{19}
-\contentsline {section}{\numberline {6.3}Tools}{19}
-\contentsline {section}{\numberline {6.4}Goals \& Expectations}{20}
-\contentsline {section}{\numberline {6.5}Let's Do It This Way, Next Time}{20}
-\contentsline {chapter}{Appendices}{21}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{22}
-\contentsline {section}{\numberline {1.1}jQuery}{22}
-\contentsline {section}{\numberline {1.2}Modernizr}{22}
-\contentsline {section}{\numberline {1.3}Twitter Bootstrap}{22}
-\contentsline {section}{\numberline {1.4}JsUnit}{23}
-\contentsline {section}{\numberline {1.5}H5BP --- HTML5 Boilerplate}{24}
-\contentsline {chapter}{\numberline {B}Code samples}{25}
-\contentsline {section}{\numberline {2.1}Random Number Generator}{25}
-\contentsline {chapter}{Annotated Bibliography}{28}
+\contentsline {subsection}{\numberline {2.1.1}Selection}{5}
+\contentsline {subsection}{\numberline {2.1.2}Modifications}{5}
+\contentsline {subsection}{\numberline {2.1.3}Requirements Specification}{6}
+\contentsline {section}{\numberline {2.2}Planning}{6}
+\contentsline {subsection}{\numberline {2.2.1}Release Planning}{6}
+\contentsline {subsection}{\numberline {2.2.2}Iteration Planning}{6}
+\contentsline {section}{\numberline {2.3}Tools}{7}
+\contentsline {chapter}{\numberline {3}Design}{9}
+\contentsline {section}{\numberline {3.1}Overall Architecture}{9}
+\contentsline {section}{\numberline {3.2}Stories}{9}
+\contentsline {section}{\numberline {3.3}Coding Style}{10}
+\contentsline {subsection}{\numberline {3.3.1}OOP and JavaScript}{10}
+\contentsline {subsection}{\numberline {3.3.2}CoffeeScript}{10}
+\contentsline {section}{\numberline {3.4}Model}{11}
+\contentsline {subsection}{\numberline {3.4.1}Structure}{11}
+\contentsline {subsection}{\numberline {3.4.2}Visibility}{11}
+\contentsline {subsection}{\numberline {3.4.3}Programming Language}{11}
+\contentsline {section}{\numberline {3.5}View}{12}
+\contentsline {subsection}{\numberline {3.5.1}SVG}{12}
+\contentsline {subsection}{\numberline {3.5.2}HTML5 Canvas and HTML}{12}
+\contentsline {section}{\numberline {3.6}Controller and User Interface}{12}
+\contentsline {section}{\numberline {3.7}Other Technology}{13}
+\contentsline {subsection}{\numberline {3.7.1}Adobe Flash}{13}
+\contentsline {subsection}{\numberline {3.7.2}Microsoft Silverlight}{13}
+\contentsline {subsection}{\numberline {3.7.3}Java and JavaFX}{14}
+\contentsline {section}{\numberline {3.8}Other design decisions}{14}
+\contentsline {subsection}{\numberline {3.8.1}Boilerplate}{14}
+\contentsline {chapter}{\numberline {4}Implementation}{15}
+\contentsline {section}{\numberline {4.1}WWW SQL Designer}{15}
+\contentsline {subsection}{\numberline {4.1.1}XSLT}{15}
+\contentsline {subsection}{\numberline {4.1.2}oz.js Library}{15}
+\contentsline {section}{\numberline {4.2}Propel Designer}{16}
+\contentsline {subsection}{\numberline {4.2.1}CoffeeScript}{16}
+\contentsline {subsection}{\numberline {4.2.2}jQuery and SVG}{16}
+\contentsline {subsection}{\numberline {4.2.3}Propel Inheritance}{17}
+\contentsline {subsection}{\numberline {4.2.4}The User Interface}{17}
+\contentsline {subsubsection}{\numberline {4.2.4.1}Twitter Bootstrap}{17}
+\contentsline {subsubsection}{\numberline {4.2.4.2}File API}{18}
+\contentsline {chapter}{\numberline {5}Testing}{19}
+\contentsline {section}{\numberline {5.1}Overall Approach to Testing}{19}
+\contentsline {subsection}{\numberline {5.1.1}Unit Tests}{19}
+\contentsline {subsection}{\numberline {5.1.2}Acceptance Tests}{19}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Model Testing}{20}
+\contentsline {subsubsection}{\numberline {5.1.2.2}User Interface Testing}{20}
+\contentsline {section}{\numberline {5.2}Other Testing Methods}{20}
+\contentsline {subsection}{\numberline {5.2.1}Automated Testing}{20}
+\contentsline {subsection}{\numberline {5.2.2}Integration Testing}{21}
+\contentsline {subsection}{\numberline {5.2.3}User Testing}{21}
+\contentsline {subsection}{\numberline {5.2.4}Stress Testing}{21}
+\contentsline {chapter}{\numberline {6}Evaluation}{23}
+\contentsline {section}{\numberline {6.1}Scope \& Design Decisions}{23}
+\contentsline {section}{\numberline {6.2}Requirements}{23}
+\contentsline {subsection}{\numberline {6.2.1}Process Methodology}{24}
+\contentsline {section}{\numberline {6.3}Tools}{24}
+\contentsline {section}{\numberline {6.4}Goals \& Expectations}{24}
+\contentsline {section}{\numberline {6.5}Reflection}{25}
+\contentsline {chapter}{Appendices}{27}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{28}
+\contentsline {section}{\numberline {1.1}jQuery}{28}
+\contentsline {section}{\numberline {1.2}Modernizr}{28}
+\contentsline {section}{\numberline {1.3}Twitter Bootstrap}{28}
+\contentsline {section}{\numberline {1.4}JsUnit}{29}
+\contentsline {section}{\numberline {1.5}H5BP --- HTML5 Boilerplate}{30}
+\contentsline {chapter}{\numberline {B}Code samples}{31}
+\contentsline {section}{\numberline {2.1}Random Number Generator}{31}
+\contentsline {chapter}{Annotated Bibliography}{34}

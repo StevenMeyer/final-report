@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Background \& Objectives} % 976 words
+\chapter{Background \& Objectives} % 1178 words
 \section{Background}
 Data modelling and database design are vast topic areas accompanied by many volumes of published theory and literature. This project focusses on a fragment of the topic; conceptual design\slash schemata. Specifically, it is concerned with entity relationship (ER) grammar and mainly with ER diagrams.
 
@@ -37,7 +37,7 @@ The core goals of the project are:
 	using a Propel schema as input.
 	\item To make such a diagram interactive\slash editable with a database modelling tool.
 	\item To produce a Propel schema XML using a schema diagram as input, id est the reverse of goal 1.
-	\item To be gratis to use.
+	\item To be gratis to use. It should not impose any restrictions such as trial periods or usage limits.
 \end{itemize}
 
 The project had these stretch goals which were available if the core goals were to be achieved in good time:
@@ -50,10 +50,18 @@ The project had these stretch goals which were available if the core goals were 
 \end{itemize}
 
 \section{Related Systems}
-As previously discussed, there are many existing `database designers' available. One such product which has native support for ORMs, including Propel, is ORM Designer. However, this product is closed-source and costs \euro99 for a single licence.
+As previously discussed, there are many existing `database designers' available. One such product which has native support for ORMs, including Propel, is ORM Designer.
+
+ORM Designer has explicit support for Propel. It includes facilities to edit the Propel-specific properties of entities and attributes, model tree navigation, associations and schema import and export. It also has support for behaviours and validators.
+
+ORM Designer is available on all major platforms and has a portable version available.
+
+With its visual ERD interface and all of these other Propel-specific features, it is clear that ORM Designer is a very strong candidate for achieving the goals set out for this project. However, the main issues preventing it from being viable and the reason why this project could compete, is that is is a closed-source commercial product with a single user licence requiring \euro99.
 
 The initial design for this project was to extend an existing software to include support for Propel schema. Of the various free modelling tools which were investigated, WWW SQL Designer by Ond\v{r}ej \v{Z}\'{a}ra was selected to be extended. This designer produces its own XML from RM diagrams, and database-specific SQL is generated from this using XSL transforms. The software is written in JavaScript and HTML meaning that it should run on any platform with a web browser making it a portable application and fulfilling one of the goals of this project.
 
 There are flaws in the software, however, which limited its usefulness for modelling Propel schema (or, indeed, any database) such as lack of composite key support and other incompatibilities with transforming the XML. It also used an in-house JavaScript library created by \v{Z}\'{a}ra which made modifying the code to add extra features a challenge. It also has no facility to save the diagram as an image.
 
 After these issues were identified, it was decided that the modelling software would be created as part of this project to utilise modern web technology and avoid custom frameworks.
+
+While WWW SQL Designer may have been dropped from the project, its merits were still such that it was used as a comparible project. This project aimed to integrate the best features of WWW SQL Designer and ORM Designer. It should be noted that ORM Designer's 14-day trial period has the implication that its `best features' are those which can be gleaned from its own sales pitch and community reviews.
