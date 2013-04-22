@@ -68,5 +68,6 @@
 \contentsline {section}{\numberline {1.4}JsUnit}{29}
 \contentsline {section}{\numberline {1.5}H5BP --- HTML5 Boilerplate}{30}
 \contentsline {chapter}{\numberline {B}Code samples}{31}
-\contentsline {section}{\numberline {2.1}Random Number Generator}{31}
-\contentsline {chapter}{Annotated Bibliography}{34}
+\contentsline {section}{\numberline {2.1}CoffeeScript Class --- Table}{31}
+\contentsline {section}{\numberline {2.2}CoffeeScript Inheritance --- jQuery extension}{37}
+\contentsline {chapter}{Annotated Bibliography}{39}

@@ -31,6 +31,8 @@
 \usepackage[official]{eurosym} % for the € (euro currency) symbol
 \usepackage{paralist} % for inline lists
 \usepackage{alltt} % for formating in verbatim environments.
+\usepackage{listings} % for word wrapped code listings
+\lstset{breaklines=true}
 
 % Use the following to selectively exclude chapters
 %\includeonly{cover,abstract,acknowledge,declare,chapter1,chapter2}
@@ -83,8 +85,8 @@
 \include{Chapter6/chapter6}% 1244 words
 % add any additional chapters here
 
-%\fancyhf{}
 \cleardoublepage
+\fancyhf{}
 \setemptyheader
 \addcontentsline{toc}{chapter}{Appendices}
 \chapter*{Appendices}

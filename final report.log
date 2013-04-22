@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.4.21)  22 APR 2013 14:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.4.21)  22 APR 2013 16:32
 entering extended mode
 **final*report.tex
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\final report.tex"
@@ -201,7 +201,32 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 \pl@lab=\toks22
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
-) ("C:\Users\Steven\Documents\university\year 4\major project\final-report\final report.aux"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count107
+\lst@gtempboxa=\box34
+\lst@token=\toks23
+\lst@length=\count108
+\lst@currlwidth=\dimen116
+\lst@column=\count109
+\lst@pos=\count110
+\lst@lostspace=\dimen117
+\lst@width=\dimen118
+\lst@newlines=\count111
+\lst@lineno=\count112
+\lst@maxwidth=\dimen119
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count113
+\lst@skipnumbers=\count114
+\lst@framebox=\box35
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+("C:\Users\Steven\Documents\university\year 4\major project\final-report\final report.aux"
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\cover.aux")
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\declaration.aux")
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\acknowledgements.aux")
@@ -214,35 +239,35 @@ Package: alltt 1997/06/16 v2.0g defines alltt environment
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\Chapter6/chapter6.aux")
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\Appendix1/appendix1.aux")
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\Appendix2/appendix2.aux"))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 40.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count107
-\scratchdimen=\dimen116
-\scratchbox=\box34
-\nofMPsegments=\count108
-\nofMParguments=\count109
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count110
-\MPscratchDim=\dimen117
-\MPnumerator=\count111
-\makeMPintoPDFobject=\count112
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count115
+\scratchdimen=\dimen120
+\scratchbox=\box36
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen121
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks25
 )
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             http://www.ctan.org/tex-archive/ 
@@ -250,7 +275,8 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 38.
+(lastpage)             ! on input line 40.
+\c@lstlisting=\count121
  ("C:\Users\Steven\Documents\university\year 4\major project\final-report\cover.tex"
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
@@ -421,14 +447,38 @@ Appendix A.
 
 ] [29]) [30] ("C:\Users\Steven\Documents\university\year 4\major project\final-report\Appendix2/appendix2.tex"
 Appendix B.
-[31
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 14.
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptm.fd"
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 14.
+ [31
 
 
 
 ]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 61.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]) [33]
+ [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35] [36] [37
+
+]) [38]
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\final report.bbl"
 Underfull \hbox (badness 10000) in paragraph at lines 25--30
 \OT1/pcr/m/n/10.95 uk / []dcswww / Dept / Teaching / CourseNotes / current / CS27020 / Lectures /
@@ -454,7 +504,7 @@ Underfull \hbox (badness 4479) in paragraph at lines 68--72
 
 ) 
 AED: lastpage setting LastPage
-[34
+[39
 
 
 ] ("C:\Users\Steven\Documents\university\year 4\major project\final-report\final report.aux"
@@ -471,22 +521,23 @@ AED: lastpage setting LastPage
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\Appendix1/appendix1.aux")
 ("C:\Users\Steven\Documents\university\year 4\major project\final-report\Appendix2/appendix2.aux")) ) ) 
 Here is how much of TeX's memory you used:
- 3404 strings out of 493921
- 50152 string characters out of 3147279
- 105276 words of memory out of 3000000
- 6522 multiletter control sequences out of 15000+200000
+ 4625 strings out of 493921
+ 68236 string characters out of 3147279
+ 241220 words of memory out of 3000000
+ 7725 multiletter control sequences out of 15000+200000
  26739 words of font info for 60 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,11n,45p,943b,404s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,11n,45p,943b,1566s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files
-/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr
-8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
-es/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
-/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "final report.pdf" (42 pages, 189228 bytes).
+/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/eurosy
+m/feymr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
+rw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on "final report.pdf" (47 pages, 213551 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
+ 191 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
