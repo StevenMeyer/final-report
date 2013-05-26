@@ -1,11 +1,29 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citename{Inc., }2012]{AquaDataStudioFeatures}
-Inc., AquaFold. 2012 (Nov.).
-\newblock {\em Aqua data studio features}.
-\newblock \url{http://www.aquafold.com/aquadatastudio_features.html}.
+\bibitem[\protect\citename{{Propel Team}, }2012a]{PropelDocRelationships}
+{Propel Team}. 2012a (Aug.).
+\newblock {\em Basic relationships}.
+\newblock \url{http://propelorm.org/documentation/04-relationships.html}.
 \newblock Accessed 2012/11/19.
+ \begin{quotation}\noindent This section of the Propel ORM documentation is
+  concerned with relationships between entities. It describes different
+  relationship type such as 1:1 and m:n and how these are set out in the XML
+  schema. This section, however, relates to functionality which has not, yet,
+  been implemented in the project. \end{quotation}
 
+\bibitem[\protect\citename{{Propel Team}, }2012b]{PropelDocDbSchema}
+{Propel Team}. 2012b (Sept.).
+\newblock {\em Database schema}.
+\newblock \url{http://propelorm.org/reference/schema.html}.
+\newblock Accessed 2012/11/19.
+ \begin{quotation}\noindent This section of the Propel ORM documentation is an
+  almost complete reference for the XML schema. It describes the hierarchy of
+  the XML nodes and gives explanations of most of the attributes and their
+  default values. This reference documentation has been frequently consulted
+  and will continue to be the major source of Propel schema information for
+  future iterations. There are some things missing, however, which will
+  hopefully be available in other documentation or else will require running
+  the Propel software and experimentation. \end{quotation}
 
 \bibitem[\protect\citename{Raymond, }2002]{CatB}
 Raymond, Eric~S. 2002 (Aug.).
@@ -13,62 +31,82 @@ Raymond, Eric~S. 2002 (Aug.).
 \newblock
   \url{http://www.catb.org/esr/writings/cathedral-bazaar/cathedral-bazaar/}.
 \newblock Accessed 2013/04/12.
-
+ \begin{quotation}\noindent This book describes the two different styles for
+  developing software, the centrally designed and architected ``cathedral''
+  method used in commercial software and the opposite ``bazaar'' model which
+  Raymond likens to Linux development. This book was examined for its relevance
+  to one of the project goals of potentially becoming an open-source software
+  project. However, as the project is still in its infancy, the project has not
+  been opened up in this way, so the revelations of this book are not yet
+  relevant. \end{quotation}
 
 \bibitem[\protect\citename{Sebesta, }2007]{ProgrammingWWW}
 Sebesta, Robert~W. 2007.
 \newblock {\em Programming the world wide web}. fourth, international edn.
 \newblock Addison Wesley.
-
-
-\bibitem[\protect\citename{Sherratt, }2011]{ERTranslationEdel}
-Sherratt, Edel. 2011 (Nov.).
-\newblock {\em Entity relationship translation}.
-\newblock
-  \url{http://www.aber.ac.uk/~dcswww/Dept/Teaching/CourseNotes/current/CS27020/Lectures/ER-translation.pdf}.
-\newblock Accessed 2012/11/18.
-
+ \begin{quotation}\noindent This book touches on all major web technologies
+  which were available at the time of publication. It could not provide much
+  useful information regarding jQuery or SVG than other, dedicated sources, but
+  it was a useful resource for creating some of the more complex XSLT routines.
+  \end{quotation}
 
 \bibitem[\protect\citename{Stevens \& Pooley, }2006]{UsingUml}
 Stevens, Perdita, \& Pooley, Rob. 2006.
-\newblock {\em Using uml: Software engineering with objects and components}.
+\newblock {\em {Using UML: Software Engineering with Objects and Components}}.
   second edn.
 \newblock Addison-Wesley.
+ \begin{quotation}\noindent This book covers the use of UML for Software
+  Engineering. This book was examined for its relevance to using a UML subset
+  for describing a database schema. It did not prove to be of any particular
+  use, however, as the Umanath \& Scamell book covered these topics in greater
+  detail. \end{quotation}
 
-
-\bibitem[\protect\citename{Team, }2012a]{PropelDocRelationships}
-Team, Propel. 2012a (Aug.).
-\newblock {\em Basic relationships}.
-\newblock \url{http://propelorm.org/documentation/04-relationships.html}.
-\newblock Accessed 2012/11/19.
-
-
-\bibitem[\protect\citename{Team, }2012b]{PropelDocDbSchema}
-Team, Propel. 2012b (Sept.).
-\newblock {\em Database schema}.
-\newblock \url{http://propelorm.org/documentation/04-relationships.html}.
-\newblock Accessed 2012/11/19.
-
+\bibitem[\protect\citename{thomasb, }2012]{GridCoffeeOOP}
+thomasb. 2012 (Mar.).
+\newblock {\em Oop with coffeescript \& javascript}.
+\newblock \url{http://www.gridlinked.info/oop-with-coffeescript-javascript/}.
+\newblock Accessed 2013/04/19.
+ \begin{quotation}\noindent This online article gives a consise overview of
+  implementing OO principles using Coffee\-Script. It also discusses OO and
+  Java\-Script to explore how it is done in Coffee\-Script. This article was
+  used as the basis of the Coffee\-Script style guidelines for the patterns
+  used for public, privileged and private members. It also covers topics such
+  as inheritance. \end{quotation}
 
 \bibitem[\protect\citename{Umanath \& Scamell,
   }2007]{DataModelingAndDatabaseDesign}
 Umanath, Narayan~S.\, \& Scamell, Richard~W.\. 2007.
-\newblock {\em Data modeling and database design}.
+\newblock {\em {Data Modeling and Database Design}}.
 \newblock Thomson Course Technology.
-
+ \begin{quotation}\noindent This book explores database design in its entirety,
+  from creating the most abstract ER models through to implementation-specific
+  models. This book was useful for discovering correct terminology and the
+  elements which make up the diagrams which the project would be creating.
+  \end{quotation}
 
 \bibitem[\protect\citename{van~der Vlist, }2002]{XSLTunit}
 van~der Vlist, Eric. 2002 (Jan.).
-\newblock {\em Xsltunit}.
+\newblock {\em {XSLTunit}}.
 \newblock \url{http://xsltunit.org/0/2/}.
 \newblock Accessed 2013/02/02.
-
+ \begin{quotation}\noindent This web-page includes an introduction to using
+  XSLTunit, the unit testing framework for XSL transformations. It describes
+  how to create an XSL stylesheet describing the tests and how to apply it to
+  test data and the XSLT files to test in order to generate the results. This
+  page was used when WWW SQL Designer was being used and XSL transforms were
+  transforming the XML into Propel-formatted XML. \end{quotation}
 
 \bibitem[\protect\citename{w3schools, }n.d.]{w3schXSLTref}
 w3schools.
 \newblock {\em Xslt elements reference}.
 \newblock \url{http://www.w3schools.com/xsl/xsl_w3celementref.asp}.
 \newblock Accessed 2013/02/02.
-
+ \begin{quotation}\noindent This reference resource describes all of this
+  different XSLT elements and how to use them. It was used in conjunction with
+  Sebesta's book to generate a detailed description of the functions described
+  in the book. That is to say that the book described using different elements
+  to achieve different goals, and this resource was used to describe the
+  elements in more detail in order to decide how to apply them to the problems
+  in the project. \end{quotation}
 
 \end{thebibliography}

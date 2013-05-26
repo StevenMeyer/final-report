@@ -1,61 +1,48 @@
 @Book{DataModelingAndDatabaseDesign,
 	author="Narayan S.\ Umanath and Richard W.\ Scamell",
-	title="Data Modeling and Database Design",
+	title={{Data Modeling and Database Design}},
 	publisher="Thomson Course Technology",
-	year=2007
+	year=2007,
+	annote={This book explores database design in its entirety, from creating the most abstract ER models through to implementation-specific models. This book was useful for discovering correct terminology and the elements which make up the diagrams which the project would be creating.}
 }	
 
 @Book{UsingUml,
 	author="Perdita Stevens and Rob Pooley",
-	title="Using UML: Software Engineering with Objects and Components",
+	title={{Using UML: Software Engineering with Objects and Components}},
 	publisher="Addison-Wesley",
 	year=2006,
-	edition="second"
+	edition="second",
+	annote={This book covers the use of UML for Software Engineering. This book was examined for its relevance to using a UML subset for describing a database schema. It did not prove to be of any particular use, however, as the Umanath \& Scamell book covered these topics in greater detail.}
 }	
 
 @Misc{PropelDocRelationships,
-	author="Propel Team",
+	author={{Propel Team}},
 	title="Basic Relationships",
 	month=Aug,
 	year=2012,
 	howpublished={\url{http://propelorm.org/documentation/04-relationships.html}},
-	note={Accessed 2012/11/19}
+	note={Accessed 2012/11/19},
+	annote={This section of the Propel ORM documentation is concerned with relationships between entities. It describes different relationship type such as 1:1 and m:n and how these are set out in the XML schema. This section, however, relates to functionality which has not, yet, been implemented in the project.}
 }	
 
 @Misc{PropelDocDbSchema,
-	author="Propel Team",
+	author={{Propel Team}},
 	title="Database Schema",
 	month=Sep,
 	year=2012,
-	howpublished={\url{http://propelorm.org/documentation/04-relationships.html}},
-	note={Accessed 2012/11/19}
-}	
-
-@Misc{ERTranslationEdel,
-	author="Edel Sherratt",
-	title="Entity Relationship Translation",
-	month=Nov,
-	year=2011,
-	howpublished={\url{http://www.aber.ac.uk/~dcswww/Dept/Teaching/CourseNotes/current/CS27020/Lectures/ER-translation.pdf}},
-	note={Accessed 2012/11/18}
-}	
-
-@Misc{AquaDataStudioFeatures,
-	author="AquaFold Inc.",
-	title="Aqua Data Studio Features",
-	month=Nov,
-	year=2012,
-	howpublished={\url{http://www.aquafold.com/aquadatastudio_features.html}},
-	note={Accessed 2012/11/19}
+	howpublished={\url{http://propelorm.org/reference/schema.html}},
+	note={Accessed 2012/11/19},
+	annote={This section of the Propel ORM documentation is an almost complete reference for the XML schema. It describes the hierarchy of the XML nodes and gives explanations of most of the attributes and their default values. This reference documentation has been frequently consulted and will continue to be the major source of Propel schema information for future iterations. There are some things missing, however, which will hopefully be available in other documentation or else will require running the Propel software and experimentation.}
 }	
 
 @Misc{XSLTunit,
 	author="Eric van der Vlist",
-	title="XSLTunit",
+	title={{XSLTunit}},
 	month=Jan,
 	year=2002,
 	howpublished={\url{http://xsltunit.org/0/2/}},
-	note={Accessed 2013/02/02}
+	note={Accessed 2013/02/02},
+	annote={This web-page includes an introduction to using XSLTunit, the unit testing framework for XSL transformations. It describes how to create an XSL stylesheet describing the tests and how to apply it to test data and the XSLT files to test in order to generate the results. This page was used when WWW SQL Designer was being used and XSL transforms were transforming the XML into Propel-formatted XML.}
 }		
 
 @Book{ProgrammingWWW,
@@ -63,14 +50,16 @@
 	title="Programming the World Wide Web",
 	publisher="Addison Wesley",
 	year=2007,
-	edition="fourth, international"
+	edition="fourth, international",
+	annote={This book touches on all major web technologies which were available at the time of publication. It could not provide much useful information regarding jQuery or SVG than other, dedicated sources, but it was a useful resource for creating some of the more complex XSLT routines.}
 }	
 
 @Misc{w3schXSLTref,
 	author="w3schools",
 	title="XSLT Elements Reference",
 	howpublished={\url{http://www.w3schools.com/xsl/xsl_w3celementref.asp}},
-	note={Accessed 2013/02/02}
+	note={Accessed 2013/02/02},
+	annote={This reference resource describes all of this different XSLT elements and how to use them. It was used in conjunction with Sebesta's book to generate a detailed description of the functions described in the book. That is to say that the book described using different elements to achieve different goals, and this resource was used to describe the elements in more detail in order to decide how to apply them to the problems in the project.}
 }	
 
 @Misc{CatB,
@@ -79,16 +68,18 @@
 	month=Aug,
 	year=2002,
 	howpublished={\url{http://www.catb.org/esr/writings/cathedral-bazaar/cathedral-bazaar/}},
-	note={Accessed 2013/04/12}
+	note={Accessed 2013/04/12},
+	annote={This book describes the two different styles for developing software, the centrally designed and architected ``cathedral'' method used in commercial software and the opposite ``bazaar'' model which Raymond likens to Linux development. This book was examined for its relevance to one of the project goals of potentially becoming an open-source software project. However, as the project is still in its infancy, the project has not been opened up in this way, so the revelations of this book are not yet relevant.}
 }
 
 @Misc{GridCoffeeOOP,
 	author="thomasb",
-	title="OOP with CoffeeScript & JavaScript",
+	title="OOP with CoffeeScript \& JavaScript",
 	month=Mar,
 	year=2012,
 	howpublished={\url{http://www.gridlinked.info/oop-with-coffeescript-javascript/}},
-	note={Accessed 2013/04/19}
+	note={Accessed 2013/04/19},
+	annote={This online article gives a consise overview of implementing OO principles using Coffee\-Script. It also discusses OO and Java\-Script to explore how it is done in Coffee\-Script. This article was used as the basis of the Coffee\-Script style guidelines for the patterns used for public, privileged and private members. It also covers topics such as inheritance.}
 }
 % This is an example of a string: this is the way you do variables in BiBTex
 % string{variable_name="string the variable_name refers to"}

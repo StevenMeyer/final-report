@@ -27,12 +27,22 @@
 % Only use one of these and comment out the other one. 
 %\usepackage{cite}
 \usepackage{natbib}
+\usepackage{graphicx}
 
 \usepackage[official]{eurosym} % for the € (euro currency) symbol
 \usepackage{paralist} % for inline lists
 \usepackage{alltt} % for formating in verbatim environments.
 \usepackage{listings} % for word wrapped code listings
 \lstset{breaklines=true}
+
+\usepackage{hyperref}
+\hypersetup{
+	pdfauthor={Steven Meyer \textless{}svm9@aber.ac.uk\textgreater},
+	pdfsubject={CS39440: Major Project},
+	pdftitle={Propel Designer},
+	pdfkeywords={project, dissertation, propel, modelling, modeling, relation, entity, grammar, masters, bachelors, meng, aberystwyth, university, major, computer science, comp sci, er, rm, erd, xml, schema, schemas, schemata},
+	pdfstartview={FitH}
+}
 
 % Use the following to selectively exclude chapters
 %\includeonly{cover,abstract,acknowledge,declare,chapter1,chapter2}
@@ -51,7 +61,10 @@
 % Set up page numbering
 \pagestyle{empty}
 
-% declarations of originality 
+% declarations of originality
+\clearpage
+\hfill
+\clearpage 
 \include{declaration}               
 
 \include{acknowledgements} % Acknowledgements
@@ -66,10 +79,13 @@
 
 \tableofcontents   
 \newpage
-\listoffigures
-\newpage 
-\listoftables
-\newpage
+%\listoffigures
+%\newpage 
+%\listoftables
+%\newpage
+\clearpage
+\hfill
+\clearpage
 
 % Set up page numbering
 \pagenumbering{arabic}
@@ -113,6 +129,7 @@
 % include any appendices here
 \include{Appendix1/appendix1}
 \include{Appendix2/appendix2}
+\include{Appendix3/appendix3}
 
 \fancypagestyle{plain}{%
    \fancyhead{} %[C]{Annotated Bibliography}
